@@ -1,1 +1,61 @@
+:root {
+  --clr-primary: #FFFFFF;
+  --clr-secondary: #000000;
+  --clr-accent: #BA1B1B;
 
+  --ff-primary: Bahnschrift, 'Segoe UI';
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+
+/* Table of Contents: 
+  1.LAYOUT
+  2.TYPOGRAPHY
+*/
+
+/************* 
+**************
+  1.LAYOUT
+**************
+*************/
+
+body {
+  font-family: var(--ff-primary);
+  background-color: var(--clr-primary);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+}
+
+.content {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 70rem;
+}
+
+.bg-light {
+  background-color: var(--clr-primary);
+}
+
+.bg-dark {
+  color: var(--clr-primary);
+  background-color: var(--clr-secondary);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/************* 
+**************
+2.TYPOGRAPHY
+**************
+*************/
