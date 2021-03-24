@@ -4,6 +4,9 @@
   --clr-accent: #BA1B1B;
 
   --ff-primary: Bahnschrift, 'Segoe UI';
+
+  --fw-bold: 700;
+  --fw-semi-bold: 500;
 }
 
 * {
@@ -36,8 +39,12 @@ body {
 
 .content {
   margin: 0 auto;
-  width: 100%;
+  width: 90%;
   max-width: 70rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .bg-light {
@@ -47,6 +54,21 @@ body {
 .bg-dark {
   color: var(--clr-primary);
   background-color: var(--clr-secondary);
+}
+
+.img-overlay-dark, .img-overlay-light {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+}
+
+.img-overlay-light {
+  opacity: .1;
+}
+
+.img-overlay-dark {
+  opacity: .2;
 }
 
 img {
@@ -59,3 +81,25 @@ img {
 2.TYPOGRAPHY
 **************
 *************/
+h1 {
+  font-size: 1.875rem;
+  /*font-size: 3.75rem;*/
+}
+
+h2 {
+  font-size: 1.25rem;
+  /* font-size: 2.5rem; */
+}
+
+span {
+  font-size: 100%;
+}
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 3.75rem
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+}

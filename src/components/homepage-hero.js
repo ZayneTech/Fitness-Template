@@ -1,11 +1,28 @@
 import React from 'react';
-
-
+import '../assets/stylesheets/homepage.css';
 
 const HomepageHero = () => {
-    return(
-        <section >
 
+    const motivationalBoxStyle = {
+        backgroundColor: 'rgba(0, 0, 0, 0)',
+        color: '#FFF'
+    }
+
+    const heroTextStyle = {
+        color: '#BA1B1B'
+    }
+
+    return(
+        <section className="container">
+            <div className="homepage-hero bg-dark">
+                <div className="img-overlay-light"></div>
+                <div className="hero-text content text-center">
+                    <h1>Your Brand Text <span style={heroTextStyle}>Here </span></h1>
+                </div>
+                <div className="container hero-motivational-box text-center" style={motivationalBoxStyle}>
+                        <h2>Challenge Your Limits</h2>
+                </div>
+            </div>
         </section>
     )
 }

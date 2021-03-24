@@ -1,0 +1,59 @@
+/* HOMEPAGE CSS */
+
+/*
+    TABLE OF CONTENTS: 
+        1.HERO
+        2.PROGRAMS
+        3.COMMUNITY
+        4.GALLERY
+        5.POSTS
+        6.ABOUT
+*/
+
+
+
+/**************
+***************
+    1.HERO
+***************
+**************/
+.homepage-hero {
+    width: 100%;
+    height: 250px;
+    background-image: url('../images//girl-squat-dark.jpg');
+    background-size: cover;
+    background-position: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--fw-bold);
+    text-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+}
+
+.hero-motivational-box {
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .homepage-hero {
+        height: 100vh;
+    }
+
+    .hero-motivational-box {
+        height: 125px;
+    }
+}
+/**************
+***************
+  2.PROGRAMS
+***************
+**************/
+
