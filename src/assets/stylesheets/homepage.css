@@ -11,7 +11,6 @@
 */
 
 
-
 /**************
 ***************
     1.HERO
@@ -42,6 +41,7 @@
     bottom: 0;
 }
 
+/* Desktop Hero */
 @media only screen and (min-width: 768px) {
     .homepage-hero {
         height: 100vh;
@@ -51,9 +51,167 @@
         height: 125px;
     }
 }
+
+
 /**************
 ***************
   2.PROGRAMS
 ***************
 **************/
+
+.homepage-programs {
+    flex-direction: column-reverse;
+    position: relative;
+}
+
+.homepage-programs-background {
+    height: 125px;
+    background-image: url('../images/squater.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.homepage-programs-cta {
+    justify-content: center;
+    align-items: center;
+    margin: 37.5px auto;
+    width: 150px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, .35);
+    color: var(--clr-primary);
+}
+
+.programs-cta-info {
+    display: none;
+}
+
+.program {
+    height: 140px;
+    width: 100%;
+    box-shadow: var(--bx-shadow);
+    position: relative;
+}
+
+.program img {
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.homepage-program-info {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px 0 10px;
+    z-index: 1;
+}
+
+/* Version 1: Program Img and Info */
+.default-mode {
+    width: 135px;
+    height: auto;
+  }
+
+.default-mode + .img-overlay-dark {
+    display: none;
+}
+
+.program p {
+    font-size: .875rem;
+}
+
+.program a {
+    font-size: .875rem;
+    font-weight: var(--fw-bold);
+    align-self: flex-end;
+    padding-right: 5px;
+}
+
+/* Version 2: Program Img Full Width */
+.full-width-mode {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    color: white;
+}
+
+.full-width-mode h2 {
+    font-weight: var(--fw-bold);
+    margin-left: 10px;
+    text-shadow: var(--bx-shadow);
+}
+
+.full-width-mode p,
+.full-width-mode a {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .homepage-programs {
+        flex-direction: row;
+    }
+
+    .homepage-programs > * {
+        flex-basis: 100%;
+    }
+
+    .homepage-programs-background {
+        height: 800px;
+    }
+
+    .homepage-programs-cta {
+        width: 60%;
+        height: auto;
+        min-height: 9.375rem;
+        flex-direction: column;
+        justify-content: unset;
+        align-items: flex-start;
+        margin: 0 2.5rem;
+        position: absolute;
+        bottom: 3.75rem;
+        background: linear-gradient(135deg,
+        rgba(255,255, 255, .35) 0%, 
+        rgba(0, 0, 0, .15) 50%,
+        rgba(0, 0, 0, .1) 75%,
+        rgba(255,255, 255, .1) 95%);
+    }
+
+    .programs-cta-info {
+        display: block;
+        padding: 15px;
+    }
+    
+    .homepage-programs-cta h3 {
+        align-self: flex-end;
+        padding: 0px 15px 15px 0;
+    }
+
+    .program {
+        height: 200px;
+    }
+
+    .program h2 {
+        font-size: clamp(1.125rem, 1.75vw, 1.75rem);
+    }
+
+    .program p {
+        font-size: clamp(1rem, 1.75vw, 1.125rem);
+    }
+
+    .program a {
+        font-size: clamp(1rem, 1.75vw, 1.25rem);
+        align-self: center;
+    }
+
+    .default-mode {
+        width: 200px;
+    }
+
+    .full-width-mode h2 {
+        font-size: 2.5rem;
+    }
+
+}
+
 

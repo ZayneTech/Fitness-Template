@@ -4,7 +4,7 @@ import '../assets/stylesheets/homepage.css';
 const HomepageHero = () => {
 
     const motivationalBoxStyle = {
-        backgroundColor: 'rgba(0, 0, 0, 0)',
+        backgroundColor: 'rgba(0, 0, 0, .35)',
         color: '#FFF'
     }
 
@@ -13,17 +13,17 @@ const HomepageHero = () => {
     }
 
     return(
-        <section className="container">
+        <header className="container">
             <div className="homepage-hero bg-dark">
                 <div className="img-overlay-light"></div>
                 <div className="hero-text content text-center">
                     <h1>Your Brand Text <span style={heroTextStyle}>Here </span></h1>
                 </div>
                 <div className="container hero-motivational-box text-center" style={motivationalBoxStyle}>
-                        <h2>Challenge Your Limits</h2>
+                    <h2>Challenge Your Limits</h2>
                 </div>
             </div>
-        </section>
+        </header>
     )
 }
 
