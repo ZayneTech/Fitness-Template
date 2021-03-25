@@ -16,6 +16,26 @@
   font-size: 1rem;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--clr-accent);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  
+}
+
+
 
 /* Table of Contents: 
   1.LAYOUT
@@ -101,6 +121,10 @@ button {
   background-color: var(--clr-secondary);
 }
 
+.button {
+  background-color: blue;
+}
+
 /************* 
 **************
 2.TYPOGRAPHY
@@ -136,5 +160,12 @@ span {
 
   h2 {
     font-size: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .container {
+    margin: 0 auto;
+    max-width: 1920px;
   }
 }
