@@ -258,7 +258,9 @@
 @media only screen and (min-width: 768px) {
     .community-container {
         width: 85%;
-        height: 125px;        
+        height: 125px;   
+        justify-content: space-between;
+        margin: 0 2.5rem 0 2.5rem;     
     }
 
     .social-stats img {
@@ -273,4 +275,99 @@
   4.GALLERY
 ***************
 **************/
+.gallery {
+    width: 100%;
+    height: 250px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: auto hidden;
+    position: relative;
+    margin-bottom: 500px;
+}
+
+/* scroll bar for mobile gallery */
+.gallery::-webkit-scrollbar {
+    height: 4px;
+}
+
+.ellipse {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.gallery img {
+    width: 100vw;
+    height: 250px;
+}
+
+.main-gallery {
+    width: 100%;
+}
+
+.side-gallery {
+    /*if static gallery set width equal to: 100 x amount of pictures in side gallery*/
+    width: 400%;
+    height: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.view-gallery-div {
+    height: 25px;
+    font-size: 1.25rem;
+    color: white;
+    position: absolute;
+    bottom: .25rem;
+    right: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .gallery {
+        height: 450px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow: hidden;
+    }
+
+    .gallery img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .main-gallery {
+        width: 65%;
+        position: relative;
+    }
+
+    .side-gallery {
+        width: 35%;
+        flex-direction: row;
+    }
+
+    .side-gallery img {
+        height: 50%;
+        width: 50%;
+    }
+
+    .ellipse {
+        display: none;
+    }
+
+    .view-gallery-div {
+        bottom: 2rem;
+        right: 2rem;
+        box-shadow: var(--bx-shadow);
+    }
+/**************
+***************
+  5.POSTS
+***************
+**************/
+
+    
+}
+
 

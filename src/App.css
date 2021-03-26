@@ -108,6 +108,8 @@ body {
 img {
   max-width: 100%;
   display: block;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 
 button {
@@ -121,9 +123,6 @@ button {
   background-color: var(--clr-secondary);
 }
 
-.button {
-  background-color: blue;
-}
 
 /************* 
 **************
