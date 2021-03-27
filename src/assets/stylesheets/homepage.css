@@ -249,8 +249,8 @@
 }
 
 .social-stats img {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: auto;
     margin-right: .25rem;
 }
 
@@ -258,14 +258,13 @@
 @media only screen and (min-width: 768px) {
     .community-container {
         width: 85%;
-        height: 125px;   
+        height: 135px;   
         justify-content: space-between;
         margin: 0 2.5rem 0 2.5rem;     
     }
 
     .social-stats img {
         width: 40px;
-        height: 40px;
         margin-right: .75rem;
     }
 }
@@ -282,7 +281,6 @@
     flex-wrap: wrap;
     overflow: auto hidden;
     position: relative;
-    margin-bottom: 500px;
 }
 
 /* scroll bar for mobile gallery */
@@ -361,13 +359,199 @@
         right: 2rem;
         box-shadow: var(--bx-shadow);
     }
+}
+
 /**************
 ***************
   5.POSTS
 ***************
 **************/
 
-    
+#homepage-recent-posts h2{
+    margin: 2rem 0 1.25rem 1rem;
+}
+
+.recent-posts-container {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.recent-post { 
+    position: relative;
+}
+
+.recent-post + .recent-post {
+    margin-top: 1.25rem;
+}
+
+.post-info {
+    position: relative;
+}
+/* default - mode */
+.post-info header{
+    margin-top: 1rem;
+}
+
+.post-info header p {
+    margin-top: .25rem;
+    font-size: .875rem;
+    font-weight: normal;
+}
+
+.post-info p {
+    margin-top: -.25rem;
+    font-size: 1rem;
+    font-weight: var(--fw-semi-bold);
+}
+
+.post-info button {
+    margin-bottom: 1rem;
+}
+
+/* overflow-mode */
+
+.overflow-mode {
+  min-height: 17rem;
+}
+
+.overflow-mode img {
+    width: 100%;
+    height: 200px;
+}
+
+.overflow-mode .post-info {
+    width: 80%;
+    background-color: white;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: var(--bx-shadow);
+    margin: 0 auto;
+}
+
+.overflow-mode header {
+    margin: .75rem;
+    margin-bottom: .5rem;
+}
+
+.overflow-mode header h3 {
+    font-size: 1rem;
+}
+
+.overflow-mode header p {
+    display: unset;
+    font-size: .75rem;
+}
+
+.overflow-mode p {
+    display: none;
+}
+
+.overflow-mode button {
+    display: block;
+    margin: 0 auto .5rem auto;
+    font-size: .75rem;
+}
+
+@media only screen and (min-width: 500px) {
+
+   .recent-post {
+     min-height: 350px;
+     width: 80%;
+     margin: 0 auto;
+   }
+
+   .overflow-mode {
+       max-height: unset;
+   }
+
+   .overflow-mode img {
+       height: 225px;
+   }
+
+   .overflow-mode .post-info {
+    width: 85%;
+}
+
+   .overflow-mode header p {
+       margin: unset;
+   }
+
+   .overflow-mode p {
+       display: block;
+       font-size: .825rem;
+       line-height: 1.25;
+       margin: .5rem .75rem .75rem;
+   }
+}
+
+@media only screen and (min-width: 768px) {
+    #homepage-recent-posts h2 {
+        margin-left: 2.5rem;
+    }
+
+    .recent-posts-container {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: nowrap;
+        margin-bottom: 200px;
+    }
+
+    .recent-post, .overflow-mode {
+        width: 37.5%;
+        height: unset;
+        margin: 1.75rem;
+    }
+
+    .recent-post + .recent-post {
+        margin-top: 1.75rem;
+    }
+
+    .recent-post img,
+    .overflow-mode img {
+        width: 100%;
+        height: 350px;
+        max-height: 400px;
+    }
+
+    .overflow-mode .post-info {
+        top: 250px;
+        width: 75%;
+        max-height: 300px;
+        padding: .5rem;
+    }
+
+    .overflow-mode p {
+        overflow: hidden;
+    }
+
+    .post-info header h3 {
+        font-size: 1.25rem;
+        margin-bottom: .25rem;
+    }
+
+    .post-info header {
+        margin-bottom: 1rem;
+    }
+
+    .post-info header p {
+        font-size: .875rem;
+    }
+
+    .post-info p,
+    .post-info button{
+        font-size: 1rem;
+    }
+
+    .post-info button {
+        margin: .5rem auto
+        /*margin: 0 0 .5rem auto;  test style
+        margin-right: 1rem;*/
+    }
 }
 
 
