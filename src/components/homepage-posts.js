@@ -12,7 +12,7 @@ const HomepagePosts = () => {
 
         <div className="recent-posts-container flex">
 
-            <div className="recent-post overflow-mode">
+            <div className="recent-post">
                 <img src={gym}/>
                 <div className="post-info">
                     <header className="post-header">
@@ -28,7 +28,7 @@ const HomepagePosts = () => {
             </div>
             
 
-            <div className="recent-post overflow-mode">
+            <div className="recent-post">
                 <img src={partnerPushup}/>
                 <div className="post-info">
                     <header className="post-header">
@@ -44,6 +44,8 @@ const HomepagePosts = () => {
             </div>
            
         </div>
+
+        <div className="spacer"> </div>
     </section>
     )
 }

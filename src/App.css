@@ -78,6 +78,10 @@ body {
   max-width: 70rem;
 }
 
+.spacer {
+  height: 15px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -152,7 +156,17 @@ span {
   font-size: 100%;
 }
 
+@media only screen and (min-width: 500px) {
+  .spacer {
+    height: 25px;
+  }
+}
+
 @media only screen and (min-width: 768px) {
+  .spacer {
+    height: 30px;
+  }
+
   h1 {
     font-size: 3.75rem
   }
