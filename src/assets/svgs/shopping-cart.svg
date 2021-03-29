@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28.433" height="24.99" viewBox="0 0 28.433 24.99">
+  <g id="shopping-cart" transform="translate(0)">
+    <g id="Group_5" data-name="Group 5" transform="translate(0 0)">
+      <path id="Path_3" data-name="Path 3" d="M9.161,16.661H24.268a.833.833,0,0,0,.8-.6L28.4,4.394a.833.833,0,0,0-.8-1.062H7.24l-.6-2.68A.833.833,0,0,0,5.831,0h-5a.833.833,0,1,0,0,1.666h4.33L8.17,15.2a2.5,2.5,0,0,0,.993,4.792H24.268a.833.833,0,1,0,0-1.666H9.163a.833.833,0,0,1,0-1.666ZM26.5,5l-2.856,10H9.831L7.61,5Zm0,0" transform="translate(0 0)" fill="#fff"/>
+      <path id="Path_4" data-name="Path 4" d="M150,362.5a2.5,2.5,0,1,0,2.5-2.5A2.5,2.5,0,0,0,150,362.5Zm2.5-.833a.833.833,0,1,1-.833.833A.834.834,0,0,1,152.5,361.666Zm0,0" transform="translate(-141.67 -340.008)" fill="#fff"/>
+      <path id="Path_5" data-name="Path 5" d="M362,362.5a2.5,2.5,0,1,0,2.5-2.5A2.5,2.5,0,0,0,362,362.5Zm2.5-.833a.833.833,0,1,1-.833.833A.834.834,0,0,1,364.5,361.666Zm0,0" transform="translate(-341.897 -340.008)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
