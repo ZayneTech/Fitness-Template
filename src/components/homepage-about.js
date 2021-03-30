@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import turkish from '../assets/images/turkish-get-up.jpg'
+import turkish from '../assets/images/turkish-get-up-opt.jpg'
 
 
 

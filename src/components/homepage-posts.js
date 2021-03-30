@@ -1,6 +1,6 @@
 import React from 'react';
-import gym from '../assets/images/squat-racks.jpg';
-import partnerPushup from '../assets/images/partner-pushup.jpg';
+import gym from '../assets/images/squat-racks-opt.jpg';
+import partnerPushup from '../assets/images/partner-pushup-opt.jpg';
 
 
 

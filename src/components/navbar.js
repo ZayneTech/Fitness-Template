@@ -6,9 +6,10 @@ import '../assets/stylesheets/navbar.css';
 const Navbar = () => {
     return(
         <header className="bg-dark flex navbar">
-
-            <Hamburger />
-            <h2>Logo</h2>
+            <div className="logo-div">
+                <Hamburger />
+                <h2>Logo</h2>
+            </div>
 
             <nav className="flex">
                 <Exit />

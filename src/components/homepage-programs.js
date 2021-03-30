@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Img1 from '../assets/images/dark-deadlift.jpg';
-import Img2 from '../assets/images/dumbbell-pushups.jpg';
-import Img3 from '../assets/images/core-girl.jpg';
-import Img4 from '../assets/images/girl-squat-light.jpg';
+import Img1 from '../assets/images/dark-deadlift-opt.jpg';
+import Img2 from '../assets/images/dumbbell-pushups-opt.jpg';
+import Img3 from '../assets/images/core-girl-opt.jpg';
+import Img4 from '../assets/images/girl-squat-light-opt.jpg';
 
 
 
