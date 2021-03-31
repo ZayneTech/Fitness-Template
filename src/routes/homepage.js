@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../components/footer';
 import HomepageAbout from '../components/homepage-about';
 import Community from '../components/homepage-community';
 import HomepageGallery from '../components/homepage-gallery';
@@ -21,6 +22,7 @@ const Homepage = () => {
            <HomepageGallery />
            <HomepagePosts />
            <HomepageAbout />
+           <Footer />
         </div>
     )
 }
