@@ -1,11 +1,12 @@
 /* About Hero */
 .hero-img {
     width: 100%;
-    height: 250px;
+    height: clamp(250px, 50vw, 500px);
     position: relative;
 }
 
 .hero-img h1 {
+    font-size: clamp(1.875rem, 5.5vw, 3.75rem);
     color: white;
     position: absolute;
     top: 55%;
@@ -31,10 +32,6 @@
     width: 100%;
 }
 
-.experience {
-    width: 100%;
-}
-
 .experience li{
     width: 45%;
     display: inline-block;
@@ -49,8 +46,10 @@
 
 .tags {
     width: 100%;
+    /* Remove code below to remove scroll and show all tags */
     overflow-x: auto;
     white-space: nowrap;
+    /* Remove code above to remove scroll and show all tags */
 }
 
 .tags::-webkit-scrollbar {
@@ -89,24 +88,169 @@
     margin-bottom: 2rem;
 }
 
-.testimonials h3, .testimonials p {
+.testimonial {
+    margin-bottom: 3rem;
+}
+
+.testimonial h3, .testimonial p {
     display: block;
     width: 90%;
+    max-width: 350px;
     margin: 10px auto;
     text-align: center;
 }
 
-.testimonials > div {
-    margin-bottom: 2rem;
-}
-
 .circle-img {
-    width: 40%;
+    width: 125px;
     height: 125px;
     background: #333;
     border: transparent;
     border-radius: 50%;
     margin: 0 auto;
+}
+
+@media only screen and (min-width: 550px) {
+    .experience ul {
+        margin: 1rem auto 2rem auto;
+    }
+    .experience li{
+        display: inline;
+        margin: 10px 7.5% 10px 0;
+    }
+    
+    .about-section,
+    .testimonials {
+        width: 80%;
+        margin: 2rem auto;
+    }
+
+    .about {
+        margin: 1rem auto;
+    }
+
+    .my-img{
+        width: 100%;
+    }
+    
+}
+
+@media only screen and (min-width: 768px) {
+    .about-section {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 85%;
+        margin: 2.5rem auto;
+    }
+
+    .about {
+        margin: 1rem 0;
+        width: 60%;
+    }
+        .about p{
+            font-size: 1.25rem;
+            line-height: 1.5;
+        }
+        
+        .goals-section {
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        .my-img {
+            width: 35%;
+            margin: unset;
+        }
+        
+        .my-img img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .goals {
+            width: 60%;
+        }
+
+        .goals p {
+            margin-bottom: 0;
+        }
+
+    .testimonials {
+        width: 85%;
+    }
+
+    .experience-info {
+        width: 30%;
+    }
+        .experience ul li {
+            display: inline-block;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .tags {
+            overflow-x: unset;
+            white-space: normal;
+        }
+        .circle-img {
+            width: 150px;
+            height: 150px;
+        }
+}
+
+@media only screen and (min-width: 1000px) {
+
+    .about {
+        margin: 1rem auto
+    }
+      /* Client Testimonials */
+      .testimonials {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 0 auto 3rem auto;
+    }
+
+        .testimonials h2 {
+            width: 100%;
+            padding-left: 5%;
+            margin-bottom: 2rem;
+        }
+
+    .testimonial {
+        width: 40%;
+        height: 175px;
+        display: flex;
+        align-items: center;
+        margin: 1.5rem 5%;
+    }
+
+    .testimonial h3, .testimonial p {
+        display: block;
+        width: 95%;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .testimonial h3 {
+        font-size: 1.5rem;
+        margin-bottom: .5rem;
+    }
+    .testimonial p {
+        font-size: clamp(.875rem, 1.35vw, 1rem);
+        line-height: 1.5;
+        width: 90%;
+        margin-left: 2.5%;
+    }
+
+    .circle-img {
+        width: clamp(125px, 10vw, 175px);
+        min-width: 125px;
+        height: clamp(125px, 10vw, 175px );
+        min-height: 125px;
+        margin: 0 10px 0 0;
+    }
 }
 
 

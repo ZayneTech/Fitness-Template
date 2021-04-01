@@ -10,6 +10,7 @@ const SecondaryHero = ({thePage}) => {
     <section className="container">
         <div className="hero-img" id={`${page}-hero`}>
             <div className="img-overlay-dark"></div>
+            <div className="img-overlay-light"></div>
             <h1>{page}</h1>
         </div>
     </section>

@@ -26,6 +26,8 @@ const About = () => {
                                 aute irure dolor in reprehenderit in voluptate velit esse 
                                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
                                 cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+                                anim id est laborum.cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+                                cupidatat non proident, sunt in culpa qui officia deserunt mollit 
                                 anim id est laborum.
                             </p>
                         </section>
@@ -78,7 +80,7 @@ const About = () => {
 
                 <section className="testimonials">
                     <h2>Client Testimonials</h2>
-                    <div>
+                    <div className="testimonial">
                         <div className="circle-img"></div>
                         <div>
                             <h3>Batman</h3>
@@ -88,7 +90,7 @@ const About = () => {
                         </div>
                     </div>
 
-                    <div>
+                    <div className="testimonial">
                         <div className="circle-img"></div>
                         <div>
                             <h3>The Flash</h3>
