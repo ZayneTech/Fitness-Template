@@ -1,0 +1,67 @@
+On our patient page add an icon chart-line from https://materialdesignicons.com/
+    import { mdiChartLine } from '@mdi/js';
+
+When user clicks that icon then open modal dialog marker.png
+    
+    Initial Page Load:
+
+        select name
+        from cpt 
+        where id = $cptid
+        
+        Use that name to set the modal dialog title
+
+        select functional_range
+        from client
+        where id = $clientid
+        
+        this value will be used later
+    
+    The Left and Right arrows:
+
+        Left and Right arrow go to previous and next test on the list.
+
+        select c.id, c.name from (
+        select distinct lc.cpt_id
+        from lab_cpt lc
+        where lc.patient_id=${req.patient_id}
+        ) lc
+        left join cpt c on c.id=lc.cpt_id
+        order by c.name
+        limit 200
+        
+        If at first test on list then grey out and deactivate the Left arrrow.  
+        If at last then grey out and deactivate the Right arrrow.
+        
+        ****Every time there is a new data set so set a new scale on the graph.
+        There are around 100 data sets.
+        Every graph must be 100% pixel perfect.
+        Do not let scale be under 0.
+        Mostly the data is the range for example of 50 to 100.
+        Sometimes it is like 1.005 to 1.025 etc
+
+    Graph:
+        select lc.lab_id, lc.lab_dt, lc.cpt_id, lc.value, lc.range_low, lc.range_high, lc.unit, l.filename, lc.client_id
+        from lab_cpt lc
+        left join lab l on l.id=lc.lab_id
+        where lc.patient_id=${req.patient_id}
+        and lc.cpt_id='{$cptid}'
+        order by lc.lab_dt, lc.lab_id
+        limit 500
+
+        Columns lc.range_low and lc.range_high are called the conventional range
+
+    If client.functional_range==True then display the functional range lines on the graph.
+        The functional range values come from /clinios/client/src/utils/FunctionalRange.js
+
+    If client.functional_range==True
+        if /clinios/client/src/utils/FunctionalRange.js has a functional range
+            when line is inside the functional range then line color green, else orange
+        else
+            when line is inside the conventional range then line color green, else orange
+    else
+        when line is inside the conventional range then line color green, else orange
+
+    When mouse hover a dot on the graph then display the temporary popup shown
+
+    When Button 3 months, 6 months etc. is clicked then adjust date range of graph
