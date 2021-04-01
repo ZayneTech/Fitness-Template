@@ -30,7 +30,7 @@ const HomepagePrograms = () => {
                     <img className="full-width-mode" src={Img1}/>
                     <div className="img-overlay-dark"></div>
 
-                    <div className=" full-width-mode homepage-program-info flex">
+                    <div className="full-width-mode homepage-program-info flex">
                         <h2>Full Body Split</h2>
                         <p> Short program description to excite 
                             customers into buying your program.
