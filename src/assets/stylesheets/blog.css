@@ -1,0 +1,141 @@
+#Blogs-hero {
+    background: url('../images/gym-overview-opt.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.flex-content {
+    flex-direction: column-reverse;
+    margin: 1.5rem 1.25rem;
+}
+
+.aside-content {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.search-div {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.search {
+    display: flex;
+    width: 100%;
+    margin: 1rem auto;
+    position: relative;
+}
+
+.search input {
+    width: 100%;
+    padding: 10px;
+    border: transparent;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    box-shadow: var(--bx-shadow);
+}
+
+.search button {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    box-shadow: var(--bx-shadow);
+}
+
+.blogs-section {
+    width: 100%;
+}
+
+.blog-post {
+    margin-bottom: 2.5rem;
+}
+
+.blog-post header {
+    margin-top: .5rem;
+    margin-bottom: -.25rem;
+}
+
+.blog-post header h3 {
+    margin-bottom: -.5rem;
+}
+
+.blog-post header p {
+    font-size: .75rem;
+    font-weight: normal;
+}
+
+.blog-content {
+    width: 100%;
+}
+
+.blog-content p {
+    font-size: 1rem;
+    font-weight: var(--fw-semi-bold);
+}
+
+@media only screen and (min-width: 550px) {
+
+    .flex-content {
+        width: 80%;
+        margin: 1.5rem auto;
+    }
+}
+
+@media only screen and (min-width: 768px) { 
+
+    .flex-content {
+        width: 85%;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 2.5rem auto;
+    }
+
+    .blogs-section {
+        width: 60%;
+    }
+
+    .aside-content {
+        width: 35%;
+    }
+
+    .aside-content button {
+        font-size: clamp(.75rem, 1.5vw , 1rem);
+    }
+    
+}
+
+@media only screen and (min-width: 1000px) {
+    .blogs-section {
+        width: 68%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .blog-post {
+        width: 48.5%;
+        margin-bottom: 1.5rem;
+    }
+
+    .blog-post img {
+        width: 100%;
+        height: 250px;
+    }
+
+    .blog-post header{
+        margin-top: .75rem;
+    }
+
+    .aside-content {
+        width: 30%;
+    }
+
+    .aside-content h2 {
+        font-size: clamp(1.25rem, 2.5vw, 2.5rem);
+    }
+
+    .search-div {
+        margin-bottom: 2rem;
+    }
+}

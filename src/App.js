@@ -4,12 +4,13 @@ import Homepage from './routes/homepage';
 import About from './routes/about';
 import AllPrograms from './routes/all-programs';
 import './App.css';
+import BlogArchive from './routes/blogs-archive';
 
 function App() {
   return (
     <div className="App">
       <ScrollProvider>
-          <AllPrograms />
+          <BlogArchive />
       </ScrollProvider>
     </div>
   );

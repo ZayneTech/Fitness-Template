@@ -201,7 +201,7 @@
 @media only screen and (min-width: 1000px) {
 
     .about {
-        margin: 1rem auto
+        margin: 1rem auto;
     }
       /* Client Testimonials */
       .testimonials {
