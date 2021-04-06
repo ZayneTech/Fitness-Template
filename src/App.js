@@ -5,12 +5,13 @@ import About from './routes/about';
 import AllPrograms from './routes/all-programs';
 import './App.css';
 import BlogArchive from './routes/blogs-archive';
+import Blog from './routes/blog';
 
 function App() {
   return (
     <div className="App">
       <ScrollProvider>
-          <BlogArchive />
+          <Blog />
       </ScrollProvider>
     </div>
   );
