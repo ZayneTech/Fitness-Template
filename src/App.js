@@ -6,12 +6,13 @@ import AllPrograms from './routes/all-programs';
 import './App.css';
 import BlogArchive from './routes/blogs-archive';
 import Blog from './routes/blog';
+import Program from './routes/program';
 
 function App() {
   return (
     <div className="App">
       <ScrollProvider>
-          <Blog />
+          <Program />
       </ScrollProvider>
     </div>
   );
