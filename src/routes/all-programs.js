@@ -1,6 +1,4 @@
 import React from 'react';
-import Footer from '../components/footer';
-import Navbar from '../components/navbar';
 import SecondaryHero from '../components/secondary-hero';
 import deadlift from '../assets/images/dark-deadlift-opt.jpg';
 import pushup from '../assets/images/dumbbell-pushups-opt.jpg';
@@ -14,8 +12,6 @@ import '../assets/stylesheets/programs.css';
 const AllPrograms = () => {
     return(
         <div className="container">
-            <Navbar />
-
             <main>
                 <SecondaryHero thePage='Programs'/>
 
@@ -85,8 +81,6 @@ const AllPrograms = () => {
                 </section>
 
             </main>
-
-            <Footer />
         </div>
     )
 }

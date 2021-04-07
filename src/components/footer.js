@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="footer-content">
                 <div className="footer-logo-div">
                     <div>
-                        <h2>Logo</h2>
+                        <h2><Link to="/"> Logo </Link></h2>
                         <h4>Brand Motto Goes Here</h4>
                     </div>
         
@@ -25,10 +25,10 @@ const Footer = () => {
                 <div className="footer-links explore">
                     <h3>Explore</h3> 
                     <ul> 
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Blogs</li>
-                        <li>Contact</li>
+                        <li><Link to="/"> Home </Link></li>
+                        <li><Link to="/about"> About </Link></li>
+                        <li><Link to="/programs"> Programs </Link></li>
+                        <li><Link to="/blogs"> Blogs </Link></li>
                     </ul>
                 </div>
 
@@ -52,8 +52,8 @@ const Footer = () => {
                 <div className="footer-links legal">
                     <h3>Legal</h3>  
                     <ul>  
-                        <li>Terms</li>
-                        <li>Privacy</li>
+                        <li><Link to="/"> Terms </Link></li>
+                        <li><Link to="/"> Privacy </Link></li>
                     </ul>
                 </div>
 

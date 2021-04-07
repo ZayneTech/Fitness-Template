@@ -1,6 +1,4 @@
 import React from 'react';
-import Footer from '../components/footer';
-import Navbar from '../components/navbar';
 import SecondaryHero from '../components/secondary-hero';
 import armFlex from '../assets/images/arm-flex-opt.jpg';
 import fitWomen from '../assets/images/fit-women-opt.jpg';
@@ -12,8 +10,6 @@ import deadlift from '../assets/images/dark-deadlift-opt.jpg';
 const Program = () => {
     return(
         <div className="container">
-            <Navbar />
-
             <main>
                 <SecondaryHero thePage="Calisthenics"/>
 
@@ -86,8 +82,6 @@ const Program = () => {
                     </aside>
                 </section>
             </main>
-
-            <Footer />
         </div>
     )
 }

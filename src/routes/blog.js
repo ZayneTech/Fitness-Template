@@ -1,6 +1,4 @@
 import React from 'react';
-import Footer from '../components/footer';
-import Navbar from '../components/navbar';
 import '../assets/stylesheets/blog.css';
 import SecondaryHero from '../components/secondary-hero';
 import search from '../assets/svgs/search.svg';
@@ -12,8 +10,6 @@ const Blog = () => {
     return(
 
         <div className="container">
-            <Navbar />
-
             <main className="">
                 <SecondaryHero thePage="Blog Name"/>
 
@@ -79,8 +75,6 @@ const Blog = () => {
                     </aside>
                 </section>
             </main>
-
-            <Footer />
         </div>
     )
 }

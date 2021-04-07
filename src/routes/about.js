@@ -1,7 +1,5 @@
 import React from 'react';
-import Navbar from '../components/navbar';
 import SecondaryHero from '../components/secondary-hero';
-import Footer from '../components/footer';
 import turkish from '../assets/images/turkish-get-up.jpg';
 import Ellipse from '../components/ellipse-svg';
 
@@ -10,8 +8,6 @@ import Ellipse from '../components/ellipse-svg';
 const About = () => {
     return(
         <div className="container">
-            <Navbar />
-
             <main>
                 <SecondaryHero thePage='About' />
 
@@ -101,8 +97,6 @@ const About = () => {
                     </div>
                 </section>
             </main>
-
-            <Footer />
         </div>
     )
 }
