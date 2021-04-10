@@ -120,6 +120,10 @@ img {
   object-position: 50% 50%;
 }
 
+svg {
+  cursor: pointer;
+}
+
 button {
   color: var(--clr-primary);
   border: transparent;

@@ -19,7 +19,7 @@ const HomepagePrograms = () => {
                         <h3>Information About Programs</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit adipiscing elit</p>
                     </div>
-                 <h3>All Programs</h3>
+                 <h3><Link to="/programs">All Programs</Link></h3>
                 </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
+import { useContext } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import { ScrollProvider } from './context/scroll-context';
 import Homepage from './routes/homepage';
 import About from './routes/about';
 import AllPrograms from './routes/all-programs';
@@ -9,44 +9,50 @@ import Program from './routes/program';
 import './App.css';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
+import { cartContext} from './context/cart-context';
+import ShoppingCart from './components/shopping-cart-modal';
+import { ScrollProvider } from './context/scroll-context';
 
 function App() {
+
+  const [cartIsOpen, setCartIsOpen] = useContext(cartContext);
+
   return (
     <div className="App">
       <Router>
-        <ScrollProvider>
-          <Navbar />
+            <Navbar />
 
-              <Route exact path="/">
-                  <Homepage />
-              </Route>
+              {cartIsOpen ? <ShoppingCart /> : "" }
 
-              <Route path="/about">
-                  <About />
-              </Route>
+                <Route exact path="/">
+                    <Homepage />
+                </Route>
 
-              <Route exact path="/programs">
-                  <AllPrograms />
-              </Route>
+                <Route path="/about">
+                    <About />
+                </Route>
 
-              <Route path="/programs/program">
-                  <Program />
-              </Route>
+                <Route exact path="/programs">
+                    <AllPrograms />
+                </Route>
 
-              <Route exact path="/blogs">
-                  <BlogArchive />
-              </Route>
+                <Route path="/programs/program">
+                    <Program />
+                </Route>
 
-              <Route path="/blogs/blog">
-                  <Blog />
-              </Route>
+                <Route exact path="/blogs">
+                    <BlogArchive />
+                </Route>
 
-              <Route path="/contact">
+                <Route path="/blogs/blog">
+                    <Blog />
+                </Route>
 
-              </Route>
+                <Route path="/contact">
+                      
+                </Route>
 
-          <Footer />
-        </ScrollProvider>
+            <Footer />
       </Router>
     </div>
   );

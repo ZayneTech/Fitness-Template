@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useContext, useEffect, useRef, useState} from 'react';
+import { scrollContext} from '../context/scroll-context';
 import { Link } from 'react-router-dom';
 import {Instagram, Twitter, Youtube, Cart, Hamburger, Exit} from '../components/svgs';
 import '../assets/stylesheets/navbar.css';
 
 const Navbar = () => {
+    /* scroll context and states */
+    const [scrollPos] = useContext(scrollContext);
+    const [prevScrollPos, setPrevScrollPos] = useState(scrollPos);
+
+    const navbar = useRef();
+
+    useEffect(() => {
+        if(prevScrollPos >= scrollPos) {
+            navbar.current.style.top = '0'
+        } else {
+            navbar.current.style.top = '-70px'
+        }
+        setPrevScrollPos(scrollPos)
+     }, [scrollPos])
+   
+
     return(
-        <header className="bg-dark flex navbar">
+        <header className="bg-dark flex navbar" ref={navbar}>
             
                 <div className="logo-div">
                     <Hamburger />
@@ -17,7 +34,7 @@ const Navbar = () => {
             
 
             <nav className="flex">
-                <Exit />
+                <Exit color="#FFF"/>
                 <h2><Link to="/">Logo</Link></h2>
 
                 <ul>
@@ -36,7 +53,7 @@ const Navbar = () => {
                     <Youtube />
                 </div>
 
-                <Cart />
+                <Cart/>
             </div>
         </header>
     )

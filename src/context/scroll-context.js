@@ -7,12 +7,12 @@ export const scrollContext = createContext();
 export const ScrollProvider = (props) => {
     const [scrollPos, setScrollPos] = useState(0);
 
-    window.addEventListener('scroll', () => {
-        setScrollPos(window.scrollY);
-    })
+    window.onscroll = () => {
+        setScrollPos(window.pageYOffset);
+    }
 
     return(
-        <scrollContext.Provider value={scrollPos}>
+        <scrollContext.Provider value={[scrollPos]}>
             {props.children}
         </scrollContext.Provider>
     )

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import { cartContext } from '../context/cart-context';
 
 
 
@@ -33,8 +34,11 @@ export const Youtube = () => {
 }
 
 export const Cart = () => {
+
+    const [cartIsOpen, setCartIsOpen] = useContext(cartContext);
+     
     return(
-        <svg xmlns="http://www.w3.org/2000/svg" width="28.433" height="24.99" viewBox="0 0 28.433 24.99" id="cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28.433" height="24.99" viewBox="0 0 28.433 24.99" id="cart" onClick={() => setCartIsOpen(prev => !prev)}>
             <g id="shopping-cart" transform="translate(0)">
                 <g id="Group_5" data-name="Group 5" transform="translate(0 0)">
                     <path id="Path_3" data-name="Path 3" d="M9.161,16.661H24.268a.833.833,0,0,0,.8-.6L28.4,4.394a.833.833,0,0,0-.8-1.062H7.24l-.6-2.68A.833.833,0,0,0,5.831,0h-5a.833.833,0,1,0,0,1.666h4.33L8.17,15.2a2.5,2.5,0,0,0,.993,4.792H24.268a.833.833,0,1,0,0-1.666H9.163a.833.833,0,0,1,0-1.666ZM26.5,5l-2.856,10H9.831L7.61,5Zm0,0" transform="translate(0 0)" fill="#fff"/>
@@ -58,12 +62,12 @@ export const Hamburger = () => {
     )
 }
 
-export const Exit = () => {
+export const Exit = (props) => {
     return(
         <svg xmlns="http://www.w3.org/2000/svg" width="20.506" height="20.506" viewBox="0 0 20.506 20.506" id="exit">
             <g id="Exit" transform="translate(-99.747 -14.247)">
-                <rect id="Rectangle_92" data-name="Rectangle 92" width="26" height="3" rx="1.5" transform="translate(101.868 14.247) rotate(45)" fill="#fff"/>
-                <rect id="Rectangle_93" data-name="Rectangle 93" width="26" height="3" rx="1.5" transform="translate(99.747 32.632) rotate(-45)" fill="#fff"/>
+                <rect id="Rectangle_92" data-name="Rectangle 92" width="26" height="3" rx="1.5" transform="translate(101.868 14.247) rotate(45)" fill={props.color}/>
+                <rect id="Rectangle_93" data-name="Rectangle 93" width="26" height="3" rx="1.5" transform="translate(99.747 32.632) rotate(-45)" fill={props.color}/>
             </g>
         </svg>
     )

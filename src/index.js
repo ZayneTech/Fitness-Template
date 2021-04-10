@@ -3,10 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ScrollProvider } from './context/scroll-context';
+import { CartProvider } from './context/cart-context';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ScrollProvider>
+      <CartProvider>
+
+          <App />
+
+      </CartProvider>
+    </ScrollProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
