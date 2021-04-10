@@ -1,28 +1,56 @@
-import React from 'react';
-import '../assets/stylesheets/shoppingcart.css'
+import React, { useContext } from 'react';
+import { cartContext } from '../context/cart-context';
+import { Exit } from './svgs';
 import core from '../assets/images/core-girl-opt.jpg'
 import deadlift from '../assets/images/dark-deadlift-opt.jpg'
-import { Exit } from './svgs';
+import '../assets/stylesheets/shoppingcart.css'
 
 const ShoppingCart = () => {
+
+    const [cartIsOpen, setCartIsOpen] = useContext(cartContext);
+
+    /* Close Shopping Cart Modal If You Click Background */
+    const closeShoppingCart = ({target, pageX, pageY}) => {
+        const background = document.querySelector('.modal-container');
+        const modal = document.querySelector('.modal');
+        const modalRect= modal.getBoundingClientRect();
+
+        const mouse = {
+            x: pageX,
+            y: pageY
+        }
+
+        if (target === background) {
+            setCartIsOpen(false);
+        }
+
+       /* if(mouse.x < modalRect.left || mouse.x > modalRect.right || mouse.y < modalRect.top || mouse.y > modalRect.bottom) {
+           setCartIsOpen(false)
+        } */
+    }
+
     return(
     /*Shopping Cart Modal */  
 
-    <div className="modal-container">
+    <div className="modal-container" onClick={(e) => closeShoppingCart(e)}>
         <div className="modal">
             <header className="modal-header">
                 <h2>Your Shopping Cart</h2>
-                <Exit color='#000' />
+                <div onClick={() => setCartIsOpen(false)}>
+                    <Exit color='#000'/>
+                </div>
             </header>
 
             <div className="modal-body">
 
                 <table>
                     <thead className="table-head">
-                        <th></th>
-                        <th>Product</th>
-                        <th>Price</th>
-                        <th>Action</th>
+                        <tr>
+                            <th></th>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
                     </thead>
 
                     <tbody>
@@ -38,7 +66,7 @@ const ShoppingCart = () => {
                             <td>Full Body Split</td>
                             <td>$99.99</td>
                             <td><button className="button">Remove</button></td>
-                        </tr>
+                        </tr>   
                     </tbody>
 
                     <tfoot>
@@ -49,11 +77,12 @@ const ShoppingCart = () => {
                             <td className="total-price">$199.98</td>
                         </tr>
                     </tfoot>
+
                 </table>
             </div>
 
             <div className="modal-footer">
-                <button className="close">Close</button>
+                <button className="close" onClick={() => setCartIsOpen(false)}>Close</button>
                 <button className="green">Checkout</button>
             </div>
         </div>

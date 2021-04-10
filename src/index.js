@@ -5,15 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ScrollProvider } from './context/scroll-context';
 import { CartProvider } from './context/cart-context';
+import { LocationProvider } from './context/location-context';
 
 ReactDOM.render(
   <React.StrictMode>
     <ScrollProvider>
-      <CartProvider>
+      <LocationProvider>
+        <CartProvider>
 
           <App />
 
-      </CartProvider>
+        </CartProvider>
+      </LocationProvider>
     </ScrollProvider>
   </React.StrictMode>,
   document.getElementById('root')

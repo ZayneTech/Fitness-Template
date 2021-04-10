@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import '../assets/stylesheets/blog.css';
 import SecondaryHero from '../components/secondary-hero';
 import search from '../assets/svgs/search.svg';
 import powerSnatch from '../assets/images/dumbbell-power-snatch-opt.jpg';
+import { locationContext } from '../context/location-context';
+import { useLocation } from 'react-router';
 
 
 
 const Blog = () => {
+
+    const [location, setLocation] = useContext(locationContext);
+
+    const locationObj = useLocation();
+
+    useEffect(() => {
+        setLocation(locationObj.pathname)
+    }, [])
+
     return(
 
         <div className="container">

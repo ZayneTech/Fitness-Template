@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useLocation } from 'react-router';
+import { locationContext} from '../context/location-context';
 import SecondaryHero from '../components/secondary-hero';
 import deadlift from '../assets/images/dark-deadlift-opt.jpg';
 import pushup from '../assets/images/dumbbell-pushups-opt.jpg';
@@ -9,7 +11,17 @@ import '../assets/stylesheets/programs.css';
 
 
 
+
 const AllPrograms = () => {
+
+    const [location, setLocation] = useContext(locationContext);
+
+    const locationObj = useLocation();
+
+    useEffect(() => {
+        setLocation(locationObj.pathname);
+    }, [])
+
     return(
         <div className="container">
             <main>

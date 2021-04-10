@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import { locationContext} from '../context/location-context';
 import SecondaryHero from '../components/secondary-hero';
 import turkish from '../assets/images/turkish-get-up.jpg';
 import Ellipse from '../components/ellipse-svg';
+import { useLocation } from 'react-router';
 
 
 
 const About = () => {
+
+    const [location, setLocation] = useContext(locationContext);
+
+    const locationObj = useLocation();
+
+    useEffect(() =>{
+        setLocation(locationObj.pathname)
+    }, [])
+
     return(
         <div className="container">
             <main>

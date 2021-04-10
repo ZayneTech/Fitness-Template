@@ -4,7 +4,8 @@
     background: rgba(0, 0, 0, .75);
     position: fixed;
     margin: 0 auto;
-    z-index: 20;
+    z-index: 5;
+    cursor: pointer;
 }
 
 .modal {
@@ -17,6 +18,7 @@
     transform: translate(-50%, -20%);
     border: transparent;
     border-radius: 5px;
+    cursor: initial;
 }
 
 .modal header {
@@ -25,15 +27,18 @@
     justify-content: space-between;
     align-items: center;
     margin: 1rem auto 2rem auto;
+    position: relative;
 }
-
     .modal-header #exit {
-        position: relative;
+        position: absolute;
         right: 0;
-        top: 0;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
 .modal-body {
+    max-height: 375px;
+    overflow-y: auto;
     margin-bottom: 1rem;
 }
 
@@ -107,14 +112,14 @@
     }
 
     .modal-body button {
-        width: 75%;
+        width: 100%;
         font-size: clamp(.75rem, 2vw, 1rem);
     }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
     .modal {
-        width: 50%;
+        width: 80%;
         max-width: 800px;
         top: 50%;
         transform: translate(-50%, -50%);
@@ -134,10 +139,21 @@
 
     .modal-body {
         max-height: 500px;
-        overflow-y: auto;
     }
 
         .modal-body table tfoot td {
             padding-top: 20px;
         }
+
+        .modal-body button {
+            width: 80%;
+            font-size: clamp(.75rem, 2vw, 1rem);
+        }
+}
+
+@media only screen and (min-width: 1000px) {
+    .modal-body button {
+        width: 60%;
+        font-size: clamp(.75rem, 2vw, 1rem);
+    }
 }

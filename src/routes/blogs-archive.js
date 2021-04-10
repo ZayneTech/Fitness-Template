@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useContext, useEffect}from 'react';
+import {useLocation} from 'react-router-dom';
 import SecondaryHero from '../components/secondary-hero';
 import gym from '../assets/images/squat-racks-opt.jpg'
 import partnerPushup from '../assets/images/partner-pushup-opt.jpg'
@@ -6,17 +7,27 @@ import yoga from '../assets/images/outdoor-yoga.jpg'
 import powerSnatch from '../assets/images/dumbbell-power-snatch-opt.jpg';
 import search from '../assets/svgs/search.svg';
 import '../assets/stylesheets/blog.css';
+import { locationContext } from '../context/location-context';
 
 
 
 const BlogArchive = () => {
+
+    const [location, setLocation] = useContext(locationContext)
+
+    const locationObj = useLocation();
+
+    useEffect(() => {
+        setLocation(locationObj.pathname)
+    }, [])
+
     return(
         <div className="container">
             <main>
                 <SecondaryHero thePage='Blogs' />
                 <section className="flex flex-content"> {/*Make into a global class*/}
 
-                    <seciton className="blogs-section">
+                    <section className="blogs-section">
                         <div className="blog-post">
                             <img src={gym}/>
                             <header>
@@ -78,7 +89,7 @@ const BlogArchive = () => {
                             <button className="button">Read More</button>
                         </div>
 
-                    </seciton>
+                    </section>
 
                     <aside className="aside-content">
                         <div className="search-div">

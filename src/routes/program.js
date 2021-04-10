@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import SecondaryHero from '../components/secondary-hero';
 import armFlex from '../assets/images/arm-flex-opt.jpg';
 import fitWomen from '../assets/images/fit-women-opt.jpg';
 import femaleSquat from '../assets/images/girl-squat-light-opt.jpg';
 import deadlift from '../assets/images/dark-deadlift-opt.jpg';
+import { locationContext } from '../context/location-context';
+import { useLocation } from 'react-router';
 
 
 
 const Program = () => {
+
+    const [location, setLocation] = useContext(locationContext);
+
+    const locationObj = useLocation();
+
+    useEffect(() => {
+        setLocation(locationObj.pathname)
+    }, [])
+
     return(
         <div className="container">
             <main>

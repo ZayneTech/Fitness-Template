@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Homepage from './routes/homepage';
 import About from './routes/about';
@@ -11,18 +11,24 @@ import Navbar from './components/navbar';
 import Footer from './components/footer';
 import { cartContext} from './context/cart-context';
 import ShoppingCart from './components/shopping-cart-modal';
-import { ScrollProvider } from './context/scroll-context';
+import { locationContext } from './context/location-context';
 
 function App() {
 
   const [cartIsOpen, setCartIsOpen] = useContext(cartContext);
+  
+  const [location] = useContext(locationContext);
+  
+  useEffect(() => {
+    setCartIsOpen(false)
+  }, [location])
 
   return (
     <div className="App">
       <Router>
             <Navbar />
 
-              {cartIsOpen ? <ShoppingCart /> : "" }
+              { cartIsOpen ? <ShoppingCart /> : "" }
 
                 <Route exact path="/">
                     <Homepage />

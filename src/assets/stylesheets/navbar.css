@@ -23,7 +23,7 @@
 }
 
 .logo-div {
-    width: 25%;
+    width: 20%;
 }
 
 .logo-div h2 {
@@ -96,7 +96,7 @@ nav ul li {
     .navbar {
         height: 70px;
     }
-
+    
     .logo-div h2 {
         margin: unset;
         display: unset;
@@ -110,7 +110,7 @@ nav ul li {
     .navbar nav {
         position: unset;
         height: 100%;
-        width: 55%;
+        width: 60%;
         flex-direction: row;
         justify-content: center;
     }
@@ -145,6 +145,10 @@ nav ul li {
 }
 
 @media only screen and (min-width: 1000px) {
+
+    .logo-div {
+        width: 25%;
+    }
     .navbar nav {
         width: 50%;
     }
