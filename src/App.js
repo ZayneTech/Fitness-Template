@@ -12,6 +12,7 @@ import Footer from './components/footer';
 import { cartContext} from './context/cart-context';
 import ShoppingCart from './components/shopping-cart-modal';
 import { locationContext } from './context/location-context';
+import GUI from './components/customize-gui';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
               { cartIsOpen ? <ShoppingCart /> : "" }
 
                 <Route exact path="/">
+                    <GUI />
                     <Homepage />
                 </Route>
 
@@ -55,7 +57,7 @@ function App() {
                 </Route>
 
                 <Route path="/contact">
-                      
+                
                 </Route>
 
             <Footer />

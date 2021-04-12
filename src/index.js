@@ -6,17 +6,20 @@ import reportWebVitals from './reportWebVitals';
 import { ScrollProvider } from './context/scroll-context';
 import { CartProvider } from './context/cart-context';
 import { LocationProvider } from './context/location-context';
+import { WebsiteProvider } from './context/website-context';
 
 ReactDOM.render(
   <React.StrictMode>
     <ScrollProvider>
-      <LocationProvider>
-        <CartProvider>
+      <WebsiteProvider>
+        <LocationProvider>
+          <CartProvider>
 
           <App />
 
-        </CartProvider>
-      </LocationProvider>
+          </CartProvider>
+        </LocationProvider>
+      </WebsiteProvider>
     </ScrollProvider>
   </React.StrictMode>,
   document.getElementById('root')

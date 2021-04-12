@@ -488,18 +488,13 @@
 
    .overflow-mode .post-info {
     width: 85%;
-}
+   }
 
    .overflow-mode header p {
        margin: unset;
    }
 
-   .overflow-mode p {
-       display: block;
-       font-size: .825rem;
-       line-height: 1.25;
-       margin: .5rem .75rem .75rem;
-   }
+  
 }
 
 @media only screen and (min-width: 768px) {
@@ -520,6 +515,10 @@
         margin: 1.75rem;
     }
 
+    .overflow-mode {
+        margin-bottom: clamp(2.5rem, 6vw, 5rem);
+    }
+
     .recent-post + .recent-post {
         margin-top: 1.75rem;
     }
@@ -534,7 +533,7 @@
     .overflow-mode .post-info {
         top: 250px;
         width: 75%;
-        max-height: 300px;
+        max-height: 200px;
         padding: .5rem;
     }
 
@@ -567,6 +566,15 @@
     }
 }
 
+@media only screen and (min-width: 1120px) {
+    .overflow-mode p {
+        display: block;
+        font-size: .825rem;
+        line-height: 1.25;
+        margin: .5rem .75rem .75rem;
+    }
+}
+
 /**************
 ***************
     1.ABOUT
@@ -575,7 +583,6 @@
 .about-background-img {
     width: 100%;
     min-height: 150px;
-    margin-bottom: 250px;
     background: url('../images/turkish-get-up-opt.jpg');
     background-size: cover;
     background-position: center;

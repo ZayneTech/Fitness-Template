@@ -3,7 +3,6 @@ import { scrollContext} from '../context/scroll-context';
 import { Link } from 'react-router-dom';
 import {Instagram, Twitter, Youtube, Cart, Hamburger, Exit} from '../components/svgs';
 import '../assets/stylesheets/navbar.css';
-import { locationContext } from '../context/location-context';
 import Homepage from '../routes/homepage';
 
 const Navbar = () => {
@@ -13,8 +12,10 @@ const Navbar = () => {
 
     /* navbar ref */
     const navbar = useRef();
+    
+    /* hide navbar on scroll down. reveal on scroll up*/
+    /*Accessibility on Focus:  (document.activeElement.nodeName === "A" && document.activeElement.parentElement.parentElement.parentElement.nodeName === 'NAV') */
 
-    /* hide navbar on scroll down. reveal on scroll up */
     useEffect(() => {
         if(prevScrollPos >= scrollPos) {
             navbar.current.style.top = '0'
@@ -22,14 +23,15 @@ const Navbar = () => {
             navbar.current.style.top = '-70px'
         }
         setPrevScrollPos(scrollPos)
+     }, [scrollPos, document.activeElement.nodeName])
 
-     }, [scrollPos])
 
     /* change color of active link */
+
      const changeActiveLink = ({target}) => {
 
-        /* Get navbar ul to check if click target equals ul.
-        prevents all ul links from being active */
+        /* Get navbar ul to check if target equals ul.
+        Prevents all ul links from being active at once.*/
         const ul = document.querySelector('ul');
 
         /* get current active and new active links*/
@@ -37,12 +39,13 @@ const Navbar = () => {
         const newActive = target;
         
         /* Check if target is already active or not an individual link */
-        if (currActive === newActive || newActive == ul) return
+        if (currActive === newActive || newActive === ul) return
 
         currActive.classList.remove('active');
         newActive.classList.add('active')
     }
    
+    
     return(
         <header className="bg-dark flex navbar" ref={navbar}>
             

@@ -107,6 +107,10 @@
     transition: .25s;
 }
 
+.buy-button button:hover, .tags button:hover{
+    background: var(--clr-accent);
+}
+
 .measure-container {
     width: 100%;
     display: flex;

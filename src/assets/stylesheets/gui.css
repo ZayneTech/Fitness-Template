@@ -1,0 +1,69 @@
+.gui-container {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--clr-accent);
+    box-shadow: var(--bx-shadow);
+    color:white;
+    position: fixed;
+    bottom: .25rem;
+    right: .25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    transition: 250ms;
+    cursor: pointer;
+}
+
+.gui-toggle {
+    width: 100%;
+}
+.gui-container p {
+    width: 100%;
+    text-align: center;
+}
+
+.gui-fields {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.gui-field {
+    width: 100%;
+}
+
+.gui-options {
+    display: flex;
+    flex-direction: row;
+}
+
+.gui-options button{
+    width: 50%;
+    margin: 0 .5rem;
+    border-radius: 5px;
+    background: #1a1a1a;
+    padding: 10px;
+}
+
+button.active-button {
+    background: var(--clr-accent);
+}
+
+
+@media only screen and (min-width: 768px) {
+    .gui-container {
+        width: 250px;
+        height: 40px;
+        bottom: .5rem;
+        right: .5rem;
+        border-radius: 5px;
+    }
+}
