@@ -36,7 +36,8 @@ const HomepagePosts = () => {
                         <p className="post-date"> March 27th, 2019</p>
                     </header>
                     <p>Brief description of what your blog post talks about. 
-                        Excite potential readers here. Can probably fit about 25 words here. Maybe a bit more, we'll check later.
+                        Excite potential readers here. Can probably fit about 25 words here. 
+                        Maybe a bit more, we'll check later. 
                     </p>
 
                     <button className="button">Read More</button>
