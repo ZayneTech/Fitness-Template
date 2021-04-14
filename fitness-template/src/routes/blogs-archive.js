@@ -1,4 +1,5 @@
 import React, {useContext, useEffect}from 'react';
+import axios from 'axios';
 import {useLocation} from 'react-router-dom';
 import SecondaryHero from '../components/secondary-hero';
 import gym from '../assets/images/squat-racks-opt.jpg'
@@ -7,18 +8,17 @@ import yoga from '../assets/images/outdoor-yoga.jpg'
 import powerSnatch from '../assets/images/dumbbell-power-snatch-opt.jpg';
 import search from '../assets/svgs/search.svg';
 import '../assets/stylesheets/blog.css';
-import { locationContext } from '../context/location-context';
-
 
 
 const BlogArchive = () => {
 
-    const [location, setLocation] = useContext(locationContext)
-
-    const locationObj = useLocation();
+    const locationObject = useLocation();
+    const newLocation = locationObject.pathname.split('/')[1]
 
     useEffect(() => {
-        setLocation(locationObj.pathname)
+        axios.get(`http://localhost:5000/${newLocation}`)
+        .then(res => console.log(res.data))
+        .catch(err => console.log(err))        
     }, [])
 
     return(

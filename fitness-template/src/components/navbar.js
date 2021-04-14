@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState} from 'react';
 import { scrollContext} from '../context/scroll-context';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {Instagram, Twitter, Youtube, Cart, Hamburger, Exit} from '../components/svgs';
 import '../assets/stylesheets/navbar.css';
 import Homepage from '../routes/homepage';
@@ -24,50 +24,47 @@ const Navbar = () => {
         }
         setPrevScrollPos(scrollPos)
      }, [scrollPos, document.activeElement.nodeName])
-
-
-    /* change color of active link */
-
-     const changeActiveLink = ({target}) => {
-
-        /* Get navbar ul to check if target equals ul.
-        Prevents all ul links from being active at once.*/
-        const ul = document.querySelector('ul');
-
-        /* get current active and new active links*/
-        const currActive = document.querySelector('.active');
-        const newActive = target;
-        
-        /* Check if target is already active or not an individual link */
-        if (currActive === newActive || newActive === ul) return
-
-        currActive.classList.remove('active');
-        newActive.classList.add('active')
-    }
    
     
     return(
         <header className="bg-dark flex navbar" ref={navbar}>
             
-                <div className="logo-div">
-                    <Hamburger />
+            <div className="logo-div">
+                <Hamburger />
                     
-                    <Link to="/">
-                        <h2>Logo</h2>
-                    </Link>
-                </div>
+                <NavLink to="/" exact activeClassName="">
+                    <h2>Logo</h2>
+                </NavLink>
+            </div>
             
 
             <nav className="flex">
                 <Exit color="#FFF"/>
-                <h2><Link to="/">Logo</Link></h2>
 
-                <ul className="navbar-links" onClick={(e) => changeActiveLink(e)}>
-                    <li><Link to="/" className="home-link active"> Home </Link></li>
-                    <li><Link to="/about" className="about-link">About</Link> </li>
-                    <li><Link to="/programs" className="programs-link">Programs</Link> </li>
-                    <li><Link to="/blogs" className="blogs-link">Blog</Link> </li>
-                    <li><Link to="contact" className="contact-link">Contact</Link> </li>
+                <h2>
+                    <NavLink to="/" exact activeClassName=""> Logo </NavLink>
+                </h2>
+
+                <ul className="navbar-links" >
+                    <li>
+                        <NavLink to="/" exact activeClassName="active" className="home-link"> Home </NavLink>
+                    </li>
+
+                    <li>
+                        <NavLink to="/about" activeClassName="active" className="about-link"> About </NavLink> 
+                    </li>
+
+                    <li>
+                        <NavLink to="/programs" activeClassName="active" className="programs-link"> Programs </NavLink> 
+                    </li>
+
+                    <li>
+                        <NavLink to="/blogs"  activeClassName="active" className="blogs-link"> Blog </NavLink> 
+                    </li>
+
+                    <li>
+                        <NavLink to="/contact"  activeClassName="active" className="contact-link"> Contact </NavLink> 
+                    </li>
                 </ul>
             </nav>
 
