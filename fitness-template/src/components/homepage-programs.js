@@ -27,17 +27,17 @@ const HomepagePrograms = () => {
             <div className="top-programs">
                 <div className="program flex">
                    
-                    <img className="default-mode" src={Img1}/>
-                    <div className="img-overlay-dark"></div>
+                   <img className="default-mode" src={Img1}/>
+                   <div className="img-overlay-dark"></div>
 
-                    <div className="homepage-program-info flex">
-                        <h2>Full Body Split</h2>
-                        <p> Short program description to excite 
-                            customers into buying your program.
-                        </p>
-                       <a> View Program </a>
-                    </div>
-                </div>
+                   <div className="homepage-program-info flex">
+                       <h2>Full Body Split</h2>
+                       <p> Short program description to excite 
+                           customers into buying your program.
+                       </p>
+                      <a> View Program </a>
+                   </div>
+               </div>
 
                 <div className="program flex">
                     <img className="default-mode" src={Img2} />

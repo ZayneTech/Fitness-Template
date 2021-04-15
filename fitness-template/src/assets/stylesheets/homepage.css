@@ -72,6 +72,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    box-shadow: var(--bx-shadow);
     position: relative;
 }
 
@@ -90,7 +91,7 @@
 }
 
 .program {
-    height: 140px;
+    height: 100%;
     width: 100%;
     box-shadow: var(--bx-shadow);
     position: relative;
@@ -104,8 +105,10 @@
 .homepage-program-info {
     flex-direction: column;
     justify-content: center;
-    padding: 0 10px 0 10px;
+    padding: 1rem;
     z-index: 1;
+    position: relative;
+    width: 100%;
 }
 
 /* Version 1: Program Img and Info */
@@ -126,7 +129,6 @@
     font-size: .875rem;
     font-weight: var(--fw-bold);
     align-self: flex-end;
-    padding-right: 5px;
 }
 
 /* Version 2: Program Img Full Width */
@@ -189,8 +191,18 @@
         padding: 0px 15px 15px 0;
     }
 
+    .top-programs {
+        display: flex;
+        flex-direction: column;
+    }
+
     .program {
-        height: 200px;
+        flex-basis: 100%;
+    }
+
+    .homepage-program-info  {
+        justify-content: flex-start;
+        padding: auto 10px;
     }
 
     .program h2 {
@@ -204,10 +216,14 @@
     .program a {
         font-size: clamp(1rem, 1.75vw, 1.25rem);
         align-self: center;
+        margin-top: auto;
     }
 
     .default-mode {
         width: 200px;
+    }
+    .full-width-mode {
+        justify-content: center;
     }
 
     .full-width-mode h2 {
