@@ -13,6 +13,8 @@ import { cartContext } from './context/cart-context';
 import ShoppingCart from './components/shopping-cart-modal';
 import { locationContext } from './context/location-context';
 import GUI from './components/customize-gui';
+import Admin from './routes/admin';
+import AdminLogin from './routes/admin-login';
 import './App.css';
 
 function App() {
@@ -59,6 +61,14 @@ function App() {
 
                 <Route path="/contact">
                 
+                </Route>
+
+                <Route exact path="/admin">
+                  <Admin />
+                </Route>
+
+                <Route  path="/admin/login">
+                  <AdminLogin />
                 </Route>
 
             <Footer />
