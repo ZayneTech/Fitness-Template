@@ -99,4 +99,301 @@
 }
 
 
+/*Admin Classes */
 
+.admin-main {
+    display: flex;
+    flex-direction: row;
+}
+
+.admin-container {
+    width: 100%;
+    height: calc(100vh - 45px);
+    max-height: 1200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    top: 22.5px;
+    margin: auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.admin-page {
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.active-link {
+    color: var(--clr-accent);
+}
+
+.light {
+    background: #f8f8f8;
+    color: black;
+}
+
+.dark {
+    background: #1a1a1a;  /*2a2a2a */
+    color: white;
+}
+
+
+/*Admin SIde Nav */
+.admin-sidenav {
+    width: 40%;
+    height: 100vh;
+    max-height: 1200px;
+    background: #1a1a1a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 0;
+    transition: left 1s;
+}
+
+.admin-sidenav li{
+    width: 100%;
+    text-align: center;
+}
+
+.admin-sidenav li a {
+    font-size: 1.25rem;
+    display: block;
+    padding: 25px;
+}
+
+/* Admin Home Page */
+
+.admin-add {
+    width: 85%;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin: clamp(.625rem, 3.2vw, 1rem);
+    border-radius: 5px;
+    box-shadow: var(--bx-shadow);
+    cursor: pointer;
+}
+
+.admin-add:active {
+    box-shadow: unset;
+}
+
+.admin-add:active svg {
+    width: 45%;
+}
+
+.admin-add svg {
+    width: 50%;
+    height: auto;
+    margin-top: 1rem;
+    transition: 250ms;
+}
+
+.admin-add p {
+    text-align: center;
+    font-weight: var(--fw-semi-bold);
+}
+
+@media only screen and (min-width: 768px) {
+    .admin-sidenav {
+        width: 17.5%;
+        display: flex;
+    }
+
+    .admin-sidenav li {
+        text-align: left;
+    }
+
+    .admin-container {
+        width: 82.5vw;
+        height: calc(100vh - 70px);
+        flex-direction: column;
+        position: relative;
+        top: 35px;
+        margin: auto;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+
+    .admin-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .admin-page {
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+    }
+
+    .admin-add {
+        max-width: 300px;
+        height: 250px;
+        transition: 250ms;
+    }
+
+    .admin-add:active, .admin-add:focus, .admin-add:hover {
+        transform: translateY(-20px);
+        outline: none;
+    } 
+
+    .admin-add svg {
+        width: 45%;
+    }
+
+    .admin-add:active svg {
+        width: 40%;
+    }
+
+    .admin-add p {
+        font-size: 1.125rem;
+    }
+
+}
+
+
+/* Admin Programs Section */ 
+
+
+.admin-programs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+}
+
+.admin-programs::-webkit-scrollbar {
+    display: none;
+}
+
+.admin-programs h3 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.program-stats {
+    width:  100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 2.5%;
+}
+
+.program-chart {
+    height: 275px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: var(--bx-shadow);
+    margin: 0 auto 1.5rem auto;
+}
+
+
+.top-selling {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-shadow: var(--bx-shadow);
+    flex-basis: 100%;
+}
+
+.top-selling h3 {
+    height: 5%;
+    margin: 1rem;
+}
+
+.top-selling-stats {
+    width: 100%;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.top-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 100%;
+    width: 100%;
+    margin: .5rem;
+    box-shadow: var(--bx-shadow);
+    border-radius: 5px;
+}
+
+.top-stat h4, .top-stat h3 { 
+    margin: 2.5%;
+    height: auto;
+}
+
+.stat-chart {
+    width: 90%;
+    height: auto;
+    margin: .5rem auto;
+}
+
+@media only screen and (min-width: 768px) {
+    .program-chart {
+        height: 275px;
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        box-shadow: var(--bx-shadow);
+        margin: 0 auto 1.5rem auto;
+    }
+    .top-selling {
+        margin: 0 2.5% 1.5rem 2.5%;
+    }
+
+    .top-stat {
+        margin: 1rem 1.5rem;
+        width: unset;
+    }
+
+}
+
+@media only screen and (min-width: 1120px) { 
+
+    .program-stats {
+        flex-wrap: nowrap;
+    }
+
+    .program-chart {
+        min-height: 275px;
+        height: 300px;
+        max-height: 350px;
+        width: 45%;
+        resize: vertical;
+        overflow: hidden;
+    }
+
+    .top-selling {
+        min-height: 325px;
+        max-height: 350px;
+    }
+    .top-selling-stats {
+        flex-wrap: nowrap;
+    }
+
+}

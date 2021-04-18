@@ -27,7 +27,7 @@ const HomepageProgramsv2 = () => {
             <div className="top-programs">
                 <div className="program flex">
                    
-                    <img className="full-width-mode" src={Img1}/>
+                    <img className="full-width-img" src={Img1}/>
                     <div className="img-overlay-dark"></div>
 
                     <div className="full-width-mode homepage-program-info flex">
@@ -35,12 +35,12 @@ const HomepageProgramsv2 = () => {
                         <p> Short program description to excite 
                             customers into buying your program.
                         </p>
-                       <a> View Program </a>
+                       <a> View Program </a> 
                     </div>
                 </div>
 
                 <div className="program flex">
-                    <img className="full-width-mode" src={Img2} />
+                    <img className="full-width-img" src={Img2} />
                     <div className="img-overlay-dark"></div>
 
                     <div className=" full-width-mode homepage-program-info flex">
@@ -53,7 +53,7 @@ const HomepageProgramsv2 = () => {
                 </div>
 
                 <div className="program flex">
-                    <img className="full-width-mode" src={Img3} />
+                    <img className="full-width-img" src={Img3} />
                     <div className="img-overlay-dark"></div>
 
                     <div className="full-width-mode homepage-program-info flex">
@@ -66,7 +66,7 @@ const HomepageProgramsv2 = () => {
                 </div>
 
                 <div className="program flex">
-                    <img className="full-width-mode" src={Img4}/>
+                    <img className="full-width-img" src={Img4}/>
                     <div className="img-overlay-dark"></div>
                  
                     <div className="full-width-mode homepage-program-info flex">
