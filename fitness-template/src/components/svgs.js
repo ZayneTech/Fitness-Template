@@ -50,9 +50,9 @@ export const Cart = () => {
     )
 }
 
-export const Hamburger = () => {
+export const Hamburger = ({reveal}) => {
     return(
-        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="19" viewBox="0 0 26 19" id="hamburger">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="19" viewBox="0 0 26 19" id="hamburger" onClick={() => reveal()}>
             <g id="Hamburger_Menu" data-name="Hamburger Menu" transform="translate(-20 -14)">
                 <rect id="Rectangle_37" data-name="Rectangle 37" width="26" height="3" rx="1.5" transform="translate(20 14)" fill="#fff"/>
                 <rect id="Rectangle_38" data-name="Rectangle 38" width="26" height="3" rx="1.5" transform="translate(20 30)" fill="#fff"/>
@@ -63,8 +63,9 @@ export const Hamburger = () => {
 }
 
 export const Exit = (props) => {
+
     return(
-        <svg xmlns="http://www.w3.org/2000/svg" width="20.506" height="20.506" viewBox="0 0 20.506 20.506" id="exit">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20.506" height="20.506" viewBox="0 0 20.506 20.506" id="exit" onClick={() => props.hide()}>
             <g id="Exit" transform="translate(-99.747 -14.247)">
                 <rect id="Rectangle_92" data-name="Rectangle 92" width="26" height="3" rx="1.5" transform="translate(101.868 14.247) rotate(45)" fill={props.color}/>
                 <rect id="Rectangle_93" data-name="Rectangle 93" width="26" height="3" rx="1.5" transform="translate(99.747 32.632) rotate(-45)" fill={props.color}/>

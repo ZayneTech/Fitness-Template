@@ -6,7 +6,7 @@ import {Doughnut} from 'react-chartjs-2'
 const DoughnutChart = () => {
 
     const data = {
-        labels: ['Program 1', 'Program 2', 'Program 3', 'Program 4' ],
+        labels: ['Full Body Split', 'Calisthenics', 'Core Strength', 'Strength & Conditioning' ],
         datasets: [
           {
             label: 'Sales',
@@ -25,8 +25,8 @@ const DoughnutChart = () => {
         maintainAspectRatio: false,
         layout: {
           padding: {
-            right: window.innerWidth < 768 ? 30 : 60,
-            left: 30,
+            right: window.innerWidth < 768 ? 30 : 20,
+            left: 20,
             top: 20,
             bottom: 20
           }

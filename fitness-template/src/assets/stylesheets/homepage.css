@@ -10,12 +10,12 @@
         6.ABOUT
 */
 
-
 /**************
 ***************
     1.HERO
 ***************
 **************/
+
 .homepage-hero {
     width: 100%;
     height: 250px;
@@ -502,7 +502,6 @@
 @media only screen and (min-width: 500px) {
 
    .recent-post {
-     min-height: 350px;
      width: 80%;
      margin: 0 auto;
    }

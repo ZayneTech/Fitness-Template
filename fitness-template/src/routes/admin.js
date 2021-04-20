@@ -30,11 +30,11 @@ const Admin = () => {
 
    const style = {
         position: 'fixed',
-        top: '10%',
-        left: '5%',
-        width: '90%',
-        height: '35%',
-        background: 'white'
+        top: '7.5%',
+        left: '2.5vw',
+        width: '95vw',
+        height: '30%',
+        background: 'white',
    }
   
    const [isOpen, setIsOpen] = useState({
@@ -49,9 +49,8 @@ const Admin = () => {
                 <section className="admin-sidenav">
                     <ul>
                        <li> <Link to="#" id="admin-home" onClick={() => adminScroll(0, "admin-home")} className="active-link">  Home </Link> </li>
-                       <li> <Link to="#program"  id="admin-programs" onClick={() => adminScroll(1, "admin-programs")} className=""> Programs  </Link></li>
-                       <li> <Link to="#blogs" id="admin-blogs" onClick={() => adminScroll(2, "admin-blogs")} className=""> Blogs </Link> </li>
-                       <li> <Link to="#settings" id="admin-settings" onClick={() => adminScroll(3, "admin-settings")} className=""> Admin </Link> </li>
+                       <li> <Link to="#Statistics"  id="admin-statistics" onClick={() => adminScroll(1, "admin-statistics")} className=""> Statistics  </Link></li>
+                       <li> <Link to="#settings" id="admin-settings" onClick={() => adminScroll(2, "admin-settings")} className=""> Settings </Link> </li>
                     </ul>
                 </section>
 
@@ -74,16 +73,16 @@ const Admin = () => {
                         </div>
                     </section>
 
-                    {/*Admin Programs Section */}
+                    {/*Admin Statistics Section */}
 
                     <section className="admin-page">
                         <div className="admin-programs">
                             <div className="program-stats">
                                 <div className="program-chart" 
-                                    // style={window.innerWidth < 768 && isOpen.line ? style : {}} 
-                                    // onClick={() => setIsOpen(prev => ({...prev, line: !prev.line})  )}
+                                    //  style={window.innerWidth < 768 && isOpen.line ? style : {}} 
+                                    //  onClick={() => setIsOpen(prev => ({...prev, line: !prev.line})  )}
                                 >
-                                    <LineChart/>
+                                    <LineChart />
                                 </div>
 
                                 <div className="program-chart"
@@ -123,37 +122,45 @@ const Admin = () => {
                         </div>
                     </section>
 
-                    {/*Admin Blogs Section */}
-
-                    <section className="admin-page">
-                        <div className="admin-add light" >
-                            <Plus />
-                            <p>Add New Program</p>
-                        </div>
-                        <div className="admin-add light" >
-                            <Plus />
-                            <p>Add New Blog</p>
-                        </div>
-                        <div className="admin-add light" >
-                            <Plus />
-                            <p>Add New Admin</p>
-                        </div>
-                    </section>
-
                     {/*Admin Settings Section */}
 
                     <section className="admin-page">
-                        <div className="admin-add light" >
-                            <Plus />
-                            <p>Add New Program</p>
+                        <div className="admin-settings"> 
+                            <div className="admin-details">
+                                <h4>Username:</h4>
+                                <h3>Dylan Moreau</h3>
+                            </div>
+
+                            <div className="admin-details">
+                                <h4>Email:</h4>
+                                <h3>zaynetechnologies@gmail.com</h3>
+                            </div>
+
+                            <div className="admin-details">
+                                <h4>Password:</h4>
+                                <button className="button">Change Password</button>
+                            </div>
+
+                            <div className="admin-details">
+                               <h3>Change Info </h3>
+                                    {/* Make a multi-step form
+                                        1. password confirmation
+                                        2. fields with edit button
+                                        3. reveal input field?
+                                    
+                                    */}
+
+                                    {/* filler form */}
+                               <form>
+                                   <input type="text" name="username" placeholder="Username"/>
+                                   <input type="email" name="email" placeholder="Email"/>
+                                   <button className="button">Submit</button>
+                               </form>
+                            </div>
                         </div>
-                        <div className="admin-add light" >
-                            <Plus />
-                            <p>Add New Blog</p>
-                        </div>
-                        <div className="admin-add light" >
-                            <Plus />
-                            <p>Add New Admin</p>
+
+                        <div className="admin-settings">
+                            
                         </div>
                     </section>
                   

@@ -24,13 +24,24 @@ const Navbar = () => {
         }
         setPrevScrollPos(scrollPos)
      }, [scrollPos, document.activeElement.nodeName])
+
+
+     const revealSideNav = () => {
+         const sideNav = document.querySelector('.nav');
+         sideNav.style.left = '0'
+     }
+
+     const hideSideNav = () => {
+        const sideNav = document.querySelector('.nav');
+        sideNav.style.left = '-70%'
+      }
    
     
     return(
         <header className="bg-dark flex navbar" ref={navbar}>
             
-            <div className="logo-div">
-                <Hamburger />
+            <div className="logo-div" >
+                <Hamburger reveal={revealSideNav}/>
                     
                 <NavLink to="/" exact activeClassName="">
                     <h2>Logo</h2>
@@ -38,14 +49,14 @@ const Navbar = () => {
             </div>
             
 
-            <nav className="flex">
-                <Exit color="#FFF"/>
+            <nav className="flex nav" >
+                <Exit color="#FFF" hide={hideSideNav}/>
 
                 <h2>
-                    <NavLink to="/" exact activeClassName=""> Logo </NavLink>
+                    <NavLink to="/" exact activeClassName="" onClick={() => hideSideNav()}> Logo </NavLink>
                 </h2>
 
-                <ul className="navbar-links" >
+                <ul className="navbar-links" onClick={() => hideSideNav()}>
                     <li>
                         <NavLink to="/" exact activeClassName="active" className="home-link"> Home </NavLink>
                     </li>

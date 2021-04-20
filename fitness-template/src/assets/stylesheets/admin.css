@@ -265,8 +265,7 @@
 }
 
 
-/* Admin Programs Section */ 
-
+/* Admin Statistics Section */ 
 
 .admin-programs {
     width: 100%;
@@ -296,7 +295,7 @@
 }
 
 .program-chart {
-    height: 275px;
+    height: 200px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -317,7 +316,7 @@
 
 .top-selling h3 {
     height: 5%;
-    margin: 1rem;
+    margin: 1rem auto;
 }
 
 .top-selling-stats {
@@ -392,8 +391,67 @@
         min-height: 325px;
         max-height: 350px;
     }
+
+    .top-selling h3 {
+        height: 5%;
+        margin: 1rem ;
+    }
     .top-selling-stats {
         flex-wrap: nowrap;
     }
+}
 
+
+/* Admin Settings Sections */
+
+.admin-settings {
+    width: 100%;
+    height: 100%;
+}
+
+.admin-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    flex-basis: 100%;
+    margin: 1rem 2.5%;
+    box-shadow: var(--bx-shadow);
+    border-radius: 5px;
+}
+
+.admin-details h3, 
+.admin-details h4 {
+    width: 75%;
+    margin: .5rem auto;
+    text-align: center;
+    word-break: break-all;
+}
+
+.admin-details button {
+    margin: .75rem;
+    font-size: .875rem;
+}
+
+.admin-details form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+}
+
+.admin-details input {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 10px;
+    border: transparent;
+    box-shadow: var(--bx-shadow);
+    border-radius: 5px;
+}
+
+.admin-details form button{
+    width: 60%;
+    margin: 1rem auto;
 }
