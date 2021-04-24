@@ -1,10 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const Grid = require('gridfs-stream');
 const path = require('path');
 const cors = require('cors');
 
 const dotenv = require('dotenv');
 dotenv.config();
+
 
 /*Initialize app and port*/
 const app = express();
@@ -25,7 +27,11 @@ mongoose.connect(uri, {
 
 const connection = mongoose.connection;
 
+let gfs;
+
 connection.once('open', () => {
+    gfs = Grid(connection.db, mongoose.mongo)
+    gfs.collection('uploads');
     console.log('Connected to MongoDB')
 })
 
@@ -33,6 +39,7 @@ connection.once('open', () => {
 const programsRoute = require('./routes/programs');
 const blogsRoute = require('./routes/blogs');
 const adminRoute = require('./routes/admin');
+const { getFips } = require('crypto');
 
 /* Use Routes */
 app.use('/programs', programsRoute);

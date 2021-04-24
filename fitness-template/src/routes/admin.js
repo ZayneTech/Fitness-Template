@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import DoughnutChart from '../components/doughnut-chart';
-import LineChart from '../components/line-chart';
-import { Plus } from '../components/svgs';
-import TopSelling from '../components/top-selling-chart';
+import AddPage from '../components/admin/admin-add-page';
+import AdminStatistics from '../components/admin/admin-statistics-page';
 
 const Admin = () => {
 
@@ -58,110 +56,117 @@ const Admin = () => {
 
                     {/*Admin Home Section */}
 
-                    <section className="admin-page" >
-                        <div className="admin-add light" tabIndex="0">
-                            <Plus />
-                            <p>Add New Program</p>
-                        </div>
-                        <div className="admin-add light" tabIndex="0">
-                            <Plus />
-                            <p>Add New Blog</p>
-                        </div>
-                        <div className="admin-add light" tabIndex="0">
-                            <Plus />
-                            <p>Add New Admin</p>
-                        </div>
-                    </section>
+                    <AddPage />
 
                     {/*Admin Statistics Section */}
 
-                    <section className="admin-page">
-                        <div className="admin-programs">
-                            <div className="program-stats">
-                                <div className="program-chart" 
-                                    //  style={window.innerWidth < 768 && isOpen.line ? style : {}} 
-                                    //  onClick={() => setIsOpen(prev => ({...prev, line: !prev.line})  )}
-                                >
-                                    <LineChart />
-                                </div>
-
-                                <div className="program-chart"
-                                    // style={window.innerWidth < 768 && isOpen.doughnut ? style : {}} 
-                                    // onClick={() => setIsOpen(prev => ({...prev, doughnut: !prev.doughnut})  )}
-                                    >
-                                    <DoughnutChart />
-                                </div>
-                            </div>
-
-                            <div className="top-selling">
-                                <h3>Top Selling Program</h3>
-
-                                <div className="top-selling-stats">
-                                    <div className="top-stat" id="top-program-name">
-                                        <h4>Program Name: </h4>
-                                        <h3>Full Body Split</h3>
-                                    </div>
-                                    <div className="top-stat">
-                                        <h4> Amount Sold: </h4>
-                                        <h3> 1,000 </h3>
-                                        <div className="stat-chart">
-                                            <TopSelling />
-                                        </div>
-                                    </div>
-                                    <div className="top-stat">
-                                        <h4>Profits Earned: </h4>
-                                        <h3>$10,000</h3>
-                                    </div>
-                                    <div className="top-stat">
-                                        <h4> Monthly Earnings </h4>
-                                        <h3> $250</h3>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </section>
+                   <AdminStatistics />
 
                     {/*Admin Settings Section */}
 
                     <section className="admin-page">
                         <div className="admin-settings"> 
-                            <div className="admin-details">
-                                <h4>Username:</h4>
-                                <h3>Dylan Moreau</h3>
+                                <div className="admin-details">
+                                    <h4>Username:</h4>
+                                    <h3>Dylan Moreau</h3>
+                                </div>
+
+                                <div className="admin-details">
+                                    <h4>Email:</h4>
+                                    <h3>zaynetechnologies@gmail.com</h3>
+                                </div>
+
+                                <div className="admin-details">
+                                    <h4>Password:</h4>
+                                    <button className="button">Change Password</button>
+                                </div>
+
+                                <div className="admin-details">
+                                <h3>Change Info </h3>
+                                        {/* Make a multi-step form
+                                            1. password confirmation
+                                            2. fields with edit button
+                                            3. reveal input field?
+                                        
+                                        */}
+
+                                        {/* filler form */}
+                                <form>
+                                    <input type="text" name="username" placeholder="Username"/>
+                                    <input type="email" name="email" placeholder="Email"/>
+                                    <button className="button">Submit</button>
+                                </form>
+                              </div>
                             </div>
+                        
 
-                            <div className="admin-details">
-                                <h4>Email:</h4>
-                                <h3>zaynetechnologies@gmail.com</h3>
-                            </div>
-
-                            <div className="admin-details">
-                                <h4>Password:</h4>
-                                <button className="button">Change Password</button>
-                            </div>
-
-                            <div className="admin-details">
-                               <h3>Change Info </h3>
-                                    {/* Make a multi-step form
-                                        1. password confirmation
-                                        2. fields with edit button
-                                        3. reveal input field?
-                                    
-                                    */}
-
-                                    {/* filler form */}
-                               <form>
-                                   <input type="text" name="username" placeholder="Username"/>
-                                   <input type="email" name="email" placeholder="Email"/>
-                                   <button className="button">Submit</button>
-                               </form>
-                            </div>
-                        </div>
-
-                        <div className="admin-settings">
+                            <div className="admin-settings">
                             
-                        </div>
+                                <div className="admin-details">
+                                    <h3>Admins</h3>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Admin</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>Dylan Moreau</td>
+                                                <td>Super Admin</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Other Admin</td>
+                                                <td><button className="button">Remove</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Other Admin</td>
+                                                <td><button className="button">Remove</button></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                
+                                </div>
+                            </div>
+
+                            {/* <div className="admin-settings">
+                                <div className="admin-details">
+                                    <h3>Active Codes</h3>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Code</th>
+                                                <th>Discount</th>
+                                                <th className="until-column">Until</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>Batman</td>
+                                                <td>20%</td>
+                                                <td className="until-column">12/26/25</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Batman</td>
+                                                <td>20%</td>
+                                                <td className="until-column">12/26/25</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Batman</td>
+                                                <td>20%</td>
+                                                <td className="until-column">12/26/25</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div> */}
+
+                        
+
                     </section>
                   
                 </section>

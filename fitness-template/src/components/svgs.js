@@ -62,13 +62,13 @@ export const Hamburger = ({reveal}) => {
     )
 }
 
-export const Exit = (props) => {
+export const Exit = ({color, hide = () => { return } }) => {
 
     return(
-        <svg xmlns="http://www.w3.org/2000/svg" width="20.506" height="20.506" viewBox="0 0 20.506 20.506" id="exit" onClick={() => props.hide()}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20.506" height="20.506" viewBox="0 0 20.506 20.506" id="exit" onClick={() => hide()}>
             <g id="Exit" transform="translate(-99.747 -14.247)">
-                <rect id="Rectangle_92" data-name="Rectangle 92" width="26" height="3" rx="1.5" transform="translate(101.868 14.247) rotate(45)" fill={props.color}/>
-                <rect id="Rectangle_93" data-name="Rectangle 93" width="26" height="3" rx="1.5" transform="translate(99.747 32.632) rotate(-45)" fill={props.color}/>
+                <rect id="Rectangle_92" data-name="Rectangle 92" width="26" height="3" rx="1.5" transform="translate(101.868 14.247) rotate(45)" fill={color}/>
+                <rect id="Rectangle_93" data-name="Rectangle 93" width="26" height="3" rx="1.5" transform="translate(99.747 32.632) rotate(-45)" fill={color}/>
             </g>
         </svg>
     )

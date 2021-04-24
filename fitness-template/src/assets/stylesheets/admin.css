@@ -114,8 +114,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     position: relative;
-    top: 22.5px;
     margin: auto;
+    top: 22.5px;
     overflow-y: hidden;
     overflow-x: hidden;
 }
@@ -146,7 +146,7 @@
 
 /*Admin SIde Nav */
 .admin-sidenav {
-    width: 40%;
+    width: 35%;
     height: 100vh;
     max-height: 1200px;
     background: #1a1a1a;
@@ -166,7 +166,7 @@
 }
 
 .admin-sidenav li a {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     display: block;
     padding: 25px;
 }
@@ -415,6 +415,7 @@
     align-items: center;
     justify-content: center;
     width: 95%;
+    max-width: 400px;
     flex-basis: 100%;
     margin: 1rem 2.5%;
     box-shadow: var(--bx-shadow);
@@ -455,3 +456,214 @@
     width: 60%;
     margin: 1rem auto;
 }
+
+.admin-details table {
+    width: 100%;
+    margin-top: 1.25rem;
+}
+
+.admin-details table thead {
+    text-align: left;
+}
+
+.admin-details table thead th {
+    padding-left: 10px;
+}
+
+.admin-details table tbody td{
+    border-top: 2px solid #EBEEF0;
+    width: 100%;
+    font-size: .75rem;
+    font-weight: var(--fw-bold);
+    padding: 15px 10px;
+    position: relative;
+}
+.admin-details table tbody td button {
+    margin: 0;
+    padding: 7.5px 12.5px;
+    font-size: .75rem;
+}
+
+/* Add New Progrms */
+
+.form-wrapper {
+    width: 100%;
+    height: calc(100vh - 45px);
+    position: fixed;
+    left: 0;
+    top: 45px;
+    background: rgba(0, 0, 0, .75);
+    z-index: 9;
+}
+
+.form-wrapper form {
+    width: 100%;
+    height: auto;
+    max-height: 650px;
+    background: white;
+    position: fixed;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.form-header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 1.5rem;
+}
+
+.input-field {
+    width: 90%;
+    margin: 1.25rem auto;
+}
+
+.input-field label {
+    font-size: 1.125rem;
+}
+
+.input-field input, .input-field textarea{
+    width: 100%;
+    margin-top: .5rem;
+
+}
+
+.input-field input[type="text"],
+.input-field textarea {
+    padding: 10px;
+    font-family: Bahnschrift, "Segoe UI";
+    border: transparent;
+    border-radius: 5px;
+    box-shadow: 0 1.5px 4px rgba(0, 0, 0, .2);
+}
+
+.input-field textarea {
+    resize: vertical;
+    font-weight: normal;
+}
+
+textarea#description {
+    height: 80px;
+    resize: none;
+}
+
+textarea#about{
+    min-height: 150px;
+    max-height: 250px;
+}
+
+
+/*Custom file input */
+
+.input-field input[type="file"] {
+    display: none;
+}
+
+.thumbnail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: #1a1a1a;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.thumbnail span.thumbnail-custom {
+    font-size: 1.125rem;
+    font-weight: var(--fw-bold);
+}
+
+/* Custom slider of input range */
+.difficulty {
+    margin-top: 2rem;
+}
+
+.range-value {
+    width: 52%;
+    height: 17.5px;
+    text-align: right;
+    font-size: .875rem;
+    font-weight: var(--fw-bold);
+    margin-bottom: -.5rem;
+    margin-top: .5rem;
+}
+
+.input-field input[type='range'] {
+    margin: 1rem 0;
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+    overflow: hidden;
+}
+
+.input-field input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 7.5px;
+    border-radius: 2.5px;
+    background: white;
+    cursor: pointer;
+    margin-top: -6.25px; 
+    box-shadow: -300px 0 0 300px rgba(187, 27, 27, 1);
+    }
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 7.5px;
+    cursor: pointer;
+    background: #1a1a1a;
+    border-radius: 2.5px;
+  }
+
+  /* form button */
+
+  form .input-field button {
+    width: 50%;
+    padding: 10px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @media only screen and (min-width: 500px) {
+      .input-field {
+          width: 80%;
+          max-width: 500px;
+      }
+  }
+
+  @media only screen and (min-width: 768px) {
+      .form-wrapper {
+          height:calc(100vh - 70px) ;
+          left: 17.5%;
+          top: 70px;
+          width: 82.5%;
+      }
+       .form-wrapper form {
+            width: 80%;
+            max-width: unset;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+       }
+  }
+
+  @media only screen and (min-width: 1920px) {
+      .form-wrapper {
+          position: absolute;
+          height: 100vh;
+          width: 100%;
+          left: 0;
+          top: -70px;
+          max-height: 1235px;
+      }
+  }

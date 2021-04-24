@@ -1,8 +1,10 @@
 const express = require('express');
 const Programs = require('../models/program.model');
-const adminchecker = require('../middleware/adminchecker');
-
 const router = express.Router();
+
+/* Require Middleware */
+const adminchecker = require('../middleware/adminchecker');
+const upload = require('../middleware/multer');
 
 
 /* Get all programs */
@@ -26,22 +28,26 @@ router.get('/:id', (req, res) => {
 })
 
 /* Add new program */
-router.post('/add', adminchecker, (req, res) => {
+router.post('/add',adminchecker, upload.single('thumbnail'), (req, res) => {
 
-    const newProgram = new Programs(req.body);
+    // const newProgram = new Programs(req.body);
+    // const files = req.body.thumbnail;
+
+  const {name, description, about, difficulty} = req.body;
+  const thumbnail = req.file.id;
+
+    const newProgram = new Programs({
+        name, 
+        description, 
+        about,
+        difficulty,
+        thumbnail
+    });
 
     newProgram.save()
-    .then(() => { res.json('Program Added!') })
+    .then(() => { res.json('Program Added') })
     .catch(err => { res.status(400).json(`Error: ${err}`) })
 
-     // const {name, description, about, thumbnail} = req.body
-
-    // // const newProgram = new Program({
-    // //     name, 
-    // //     description, 
-    // //     about, 
-    // //     thumbnail
-    // // });
 })  
 
 /* Update existing program */

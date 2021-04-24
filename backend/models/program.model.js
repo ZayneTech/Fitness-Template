@@ -6,7 +6,8 @@ const programSchema = new Schema({
     name: {type: String, required: true},
     description: {type: String, required: true},
     about: {type: String, required: true},
-    thumbnail: {data: Buffer, contentType: String }
+    difficulty: {type: String, required: true},
+    thumbnail: {type: Object, required: true}
 }, {timestamps: true})
 
 const Program = mongoose.model('Program', programSchema);

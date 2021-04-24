@@ -1,13 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import {Instagram, Twitter, Youtube} from '../components/svgs';
+
 import '../assets/stylesheets/footer.css';
 
 const Footer = () => {
-
-
+    const footer = useRef();
+    const url = useLocation();
+    
+    useEffect(()=> {
+        url.pathname === '/admin' ?
+        footer.current.style.display = 'none' :
+        footer.current.style.display = 'flex'
+    }, [])
     return(
-        <footer className="container bg-dark">
+        <footer className="container bg-dark" ref={footer}>
             <div className="footer-content">
                 <div className="footer-logo-div">
                     <div>
