@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import {Instagram, Twitter, Youtube} from '../components/svgs';
+import {Instagram, Twitter, Youtube} from '../svgs';
 
-import '../assets/stylesheets/footer.css';
+import '../../assets/stylesheets/footer.css';
 
 const Footer = () => {
     const footer = useRef();

@@ -1,10 +1,10 @@
 import React from 'react';
-import sunset from '../assets/images/sunset-girl-opt.jpg';
-import fitWomen from '../assets/images/fit-women-opt.jpg';
-import ringPull from '../assets/images/ring-pullup-opt.jpg';
-import manFlex from '../assets/images/arm-flex-opt.jpg';
-import fitGirl from '../assets/images/fit-girl-opt.jpg';
-import Ellipse from './ellipse-svg';
+import sunset from '../../assets/images/sunset-girl-opt.jpg';
+import fitWomen from '../../assets/images/fit-women-opt.jpg';
+import ringPull from '../../assets/images/ring-pullup-opt.jpg';
+import manFlex from '../../assets/images/arm-flex-opt.jpg';
+import fitGirl from '../../assets/images/fit-girl-opt.jpg';
+import Ellipse from '../ellipse-svg';
 
 
 const HomepageGallery = () => {

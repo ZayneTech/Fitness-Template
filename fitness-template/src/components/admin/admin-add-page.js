@@ -11,7 +11,6 @@ const AddPage = () => {
 
     const openModal = () => {
         setProgramForm(prev => !prev)
-        document.body.style.overflow = 'hidden';
     }
 
     return(

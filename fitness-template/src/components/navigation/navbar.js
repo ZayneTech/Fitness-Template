@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useRef, useState} from 'react';
-import { scrollContext} from '../context/scroll-context';
+import { scrollContext} from '../../context/scroll-context';
 import { NavLink } from 'react-router-dom';
-import {Instagram, Twitter, Youtube, Cart, Hamburger, Exit} from '../components/svgs';
-import '../assets/stylesheets/navbar.css';
-import Homepage from '../routes/homepage';
+import {Instagram, Twitter, Youtube, Cart, Hamburger, Exit} from '../svgs';
+import '../../assets/stylesheets/navbar.css';
+import Homepage from '../../routes/homepage';
 
 const Navbar = () => {
     /* scroll context and states*/

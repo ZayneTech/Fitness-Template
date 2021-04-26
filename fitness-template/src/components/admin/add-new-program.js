@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
-import acios from 'axios';
 import axios from 'axios';
 
 
 const NewProgram = ({setProgramForm}) => {
 
+    /* program state */
     const [program, setProgram] = useState({
         name: '',
         description: '',
@@ -13,15 +13,18 @@ const NewProgram = ({setProgramForm}) => {
         thumbnail: {}
     })
 
+    /* handle input changes: text fields */
     const handleChange = ({ target }) => {
         const {name, value} = target;
         setProgram(prev => ({...prev, [name]: value}))
     }
 
+    /* handle input changes: file fields */
     const handleFiles = (e) => {
         setProgram(prev => ({...prev, thumbnail: e.target.files[0]}))
     }
 
+    /* handle input changes: range field && display range value */
     const rangeValue = ({target}) => {
         const {name, value} = target;
         const rangeValue = document.querySelector('.range-value');
@@ -32,8 +35,12 @@ const NewProgram = ({setProgramForm}) => {
         rangeValue.style.width = `calc(${value}% + 5.5px)`
     }
 
+    /* handle form submit */
     const handleSubmit = (e) => {
+
         e.preventDefault();
+
+        /* formData API to send to backend: append all fields */
         let formData = new FormData();
 
         formData.append('name', program.name);
@@ -41,6 +48,8 @@ const NewProgram = ({setProgramForm}) => {
         formData.append('about', program.about);
         formData.append('difficulty', program.difficulty);
         formData.append('thumbnail', program.thumbnail);
+
+        /* submit to backend route: reset form */
 
         axios.post('http://localhost:5000/programs/add', formData)
         .then(res => console.log(res.data))
@@ -55,12 +64,12 @@ const NewProgram = ({setProgramForm}) => {
         })
     }
 
+    /* close program form modal */
     const closeModal = ({target}) => {
         const formBackground = document.querySelector('.form-wrapper');
 
         if(target !== formBackground) { return }
 
-        document.body.style.overflow = 'auto';
         setProgramForm(false)
     }
 

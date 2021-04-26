@@ -1,14 +1,14 @@
 import { useContext, useEffect } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import axios from 'axios';
-import Navbar from './components/navbar';
+import Navbar from './components/navigation/navbar';
 import Homepage from './routes/homepage';
 import About from './routes/about';
 import AllPrograms from './routes/all-programs';
 import Program from './routes/program';
 import BlogArchive from './routes/blogs-archive';
 import Blog from './routes/blog';
-import Footer from './components/footer';
+import Footer from './components/navigation/footer';
 import { cartContext } from './context/cart-context';
 import ShoppingCart from './components/shopping-cart-modal';
 import { locationContext } from './context/location-context';

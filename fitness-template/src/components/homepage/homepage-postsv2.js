@@ -1,10 +1,10 @@
 import React from 'react';
-import gym from '../assets/images/squat-racks-opt.jpg';
-import partnerPushup from '../assets/images/partner-pushup-opt.jpg';
+import gym from '../../assets/images/squat-racks-opt.jpg';
+import partnerPushup from '../../assets/images/partner-pushup-opt.jpg';
 
 
 
-const HomepagePosts = () => {
+const HomepagePostsv2 = () => {
 
     return (
     <section className="container" id="homepage-recent-posts">
@@ -12,7 +12,7 @@ const HomepagePosts = () => {
 
         <div className="recent-posts-container flex">
 
-            <div className="recent-post">
+            <div className="recent-post overflow-mode">
                 <img src={gym}/>
                 <div className="post-info">
                     <header className="post-header">
@@ -28,7 +28,7 @@ const HomepagePosts = () => {
             </div>
             
 
-            <div className="recent-post">
+            <div className="recent-post overflow-mode">
                 <img src={partnerPushup}/>
                 <div className="post-info">
                     <header className="post-header">
@@ -36,8 +36,7 @@ const HomepagePosts = () => {
                         <p className="post-date"> March 27th, 2019</p>
                     </header>
                     <p>Brief description of what your blog post talks about. 
-                        Excite potential readers here. Can probably fit about 25 words here. 
-                        Maybe a bit more, we'll check later. 
+                        Excite potential readers here. Can probably fit about 25 words here. Maybe a bit more, we'll check later.
                     </p>
 
                     <button className="button">Read More</button>
@@ -55,4 +54,4 @@ const HomepagePosts = () => {
 
 
 
-export default HomepagePosts;
+export default HomepagePostsv2;

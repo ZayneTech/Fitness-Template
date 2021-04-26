@@ -1,7 +1,7 @@
 import React from 'react';
-import instagram from '../assets/svgs/InstagramLogo.svg';
-import twitter from '../assets/svgs/twitter.svg';
-import youtube from '../assets/svgs/youtube.svg';
+import instagram from '../../assets/svgs/InstagramLogo.svg';
+import twitter from '../../assets/svgs/twitter.svg';
+import youtube from '../../assets/svgs/youtube.svg';
 
 
 const Community = () => {
