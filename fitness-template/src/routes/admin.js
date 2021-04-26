@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import AddPage from '../components/admin/admin-add-page';
 import AdminStatistics from '../components/admin/admin-statistics-page';
@@ -26,20 +26,6 @@ const Admin = () => {
         newActiveLink.classList.add('active-link');
    }
 
-   const style = {
-        position: 'fixed',
-        top: '7.5%',
-        left: '2.5vw',
-        width: '95vw',
-        height: '30%',
-        background: 'white',
-   }
-  
-   const [isOpen, setIsOpen] = useState({
-       line: false,
-       doughnut: false
-   })
-
     return(
         <div className="container">
 
@@ -65,108 +51,95 @@ const Admin = () => {
                     {/*Admin Settings Section */}
 
                     <section className="admin-page">
-                        <div className="admin-settings"> 
-                                <div className="admin-details">
-                                    <h4>Username:</h4>
-                                    <h3>Dylan Moreau</h3>
+                        <div className="admin-settings">
+
+                        <div className="admin-details text-center" id="admin-account">
+                                <h3>Your Account</h3> 
+
+                                <div className="admin-info">
+                                    <h4>Username</h4>
+                                    <h4>Dylan Moreau</h4>
                                 </div>
 
-                                <div className="admin-details">
-                                    <h4>Email:</h4>
-                                    <h3>zaynetechnologies@gmail.com</h3>
+                                <div className="admin-info">
+                                    <h4>Email</h4>
+                                    <h4>zaynetechnologies@gmail.com</h4>
                                 </div>
-
-                                <div className="admin-details">
-                                    <h4>Password:</h4>
+                                <div className="admin-info">
+                                    <h4>Password</h4>
                                     <button className="button">Change Password</button>
                                 </div>
-
-                                <div className="admin-details">
-                                <h3>Change Info </h3>
-                                        {/* Make a multi-step form
-                                            1. password confirmation
-                                            2. fields with edit button
-                                            3. reveal input field?
-                                        
-                                        */}
-
-                                        {/* filler form */}
-                                <form>
-                                    <input type="text" name="username" placeholder="Username"/>
-                                    <input type="email" name="email" placeholder="Email"/>
-                                    <button className="button">Submit</button>
-                                </form>
-                              </div>
-                            </div>
-                        
-
-                            <div className="admin-settings">
-                            
-                                <div className="admin-details">
-                                    <h3>Admins</h3>
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th>Admin</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody>
-                                            <tr>
-                                                <td>Dylan Moreau</td>
-                                                <td>Super Admin</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Other Admin</td>
-                                                <td><button className="button">Remove</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Other Admin</td>
-                                                <td><button className="button">Remove</button></td>
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-                                
+                                <div className="admin-info">
+                                    <h4 id="other">Other Settings</h4>
                                 </div>
+                        </div> 
+
+                        <div className="table-container">
+                        <div className="admin-details text-center">
+                            <h3> The Team </h3>
+
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Role</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>Dylan Moreau</td>
+                                        <td>Super Admin</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Other Admin</td>
+                                        <td> Admin </td>
+                                        <td><button  className="button">Remove</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Other Admin</td>
+                                        <td> Admin </td>
+                                        <td><button className="button">Remove</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div className="admin-details text-center">
+                                <h3>Discount codes</h3>
+
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Code</th>
+                                            <th>Discount</th>
+                                            <th>Expires</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>batman</td>
+                                            <td>20%</td>
+                                            <td>12/26/25</td>
+                                        </tr>
+                                        <tr>
+                                            <td>flash</td>
+                                            <td>15%</td>
+                                            <td>12/26/22</td>
+                                        </tr>
+                                        <tr>
+                                            <td>superman</td>
+                                            <td>10%</td>
+                                            <td>12/26/28</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-
-                            {/* <div className="admin-settings">
-                                <div className="admin-details">
-                                    <h3>Active Codes</h3>
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th>Code</th>
-                                                <th>Discount</th>
-                                                <th className="until-column">Until</th>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody>
-                                            <tr>
-                                                <td>Batman</td>
-                                                <td>20%</td>
-                                                <td className="until-column">12/26/25</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Batman</td>
-                                                <td>20%</td>
-                                                <td className="until-column">12/26/25</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Batman</td>
-                                                <td>20%</td>
-                                                <td className="until-column">12/26/25</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div> */}
-
-                        
-
+                        </div>
+                    </div>
                     </section>
                   
                 </section>

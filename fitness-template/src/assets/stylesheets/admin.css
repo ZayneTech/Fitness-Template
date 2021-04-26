@@ -402,89 +402,161 @@
 }
 
 
-/* Admin Settings Sections */
+/* Admin Settings Section */
+    .admin-settings {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow-y: auto;
+    }
 
-.admin-settings {
-    width: 100%;
-    height: 100%;
-}
+    .admin-details {
+        width: 95%;
+        min-height: 250px;
+        box-shadow: var(--bx-shadow);
+        border-radius: 5px;
+        margin: .75rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
 
-.admin-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 95%;
-    max-width: 400px;
-    flex-basis: 100%;
-    margin: 1rem 2.5%;
-    box-shadow: var(--bx-shadow);
-    border-radius: 5px;
-}
+    .admin-details::-webkit-scrollbar {
+        height: 5px;
+    }
 
-.admin-details h3, 
-.admin-details h4 {
-    width: 75%;
-    margin: .5rem auto;
-    text-align: center;
-    word-break: break-all;
-}
+    .admin-details h3 {
+        margin: 1.25rem;
+    }
 
-.admin-details button {
-    margin: .75rem;
-    font-size: .875rem;
-}
+    .admin-info {
+        width: 100%;
+        margin: .5rem auto 0 auto;
+        border-top: 1px solid #E7EAED;
+    }
 
-.admin-details form {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    display: none;
-}
+    .admin-info h4 {
+        margin: 1rem;
+        word-wrap: break-word;
+        font-weight: var(--fw-semi-bold);
+        letter-spacing: .25px;
+    }
 
-.admin-details input {
-    width: 100%;
-    margin: 1rem 0;
-    padding: 10px;
-    border: transparent;
-    box-shadow: var(--bx-shadow);
-    border-radius: 5px;
-}
+    .admin-info h4 + h4 {
+        font-weight: var(--fw-bold);
+    }
 
-.admin-details form button{
-    width: 60%;
-    margin: 1rem auto;
-}
+    .admin-info button {
+       margin: -.25rem auto .5rem auto;
+    }
 
-.admin-details table {
-    width: 100%;
-    margin-top: 1.25rem;
-}
+    .table-container {
+        width: 100%;
+    }
 
-.admin-details table thead {
-    text-align: left;
-}
+    .admin-details table {
+        text-align: left;
+    }
 
-.admin-details table thead th {
-    padding-left: 10px;
-}
+    .admin-details table th {
+        padding: 5px 7.5px;
+    }
 
-.admin-details table tbody td{
-    border-top: 2px solid #EBEEF0;
-    width: 100%;
-    font-size: .75rem;
-    font-weight: var(--fw-bold);
-    padding: 15px 10px;
-    position: relative;
-}
-.admin-details table tbody td button {
-    margin: 0;
-    padding: 7.5px 12.5px;
-    font-size: .75rem;
-}
+    .admin-details table td{
+        padding: 10px;
+        border-top: 1px solid #E7EAED;
+        font-size: .75rem;
+    }
 
-/* Add New Progrms */
+    .admin-details table td button {
+        font-size: .75rem;
+        padding: 5px 10px;
+    }
+
+    @media only screen and (min-width: 768px) {
+        .admin-settings {
+            width: 90%;
+            height: 100%;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .admin-details {
+            min-width: 250px;
+            width: 32%;
+        }
+
+        .admin-info {
+            text-align: left;
+            width: 95%;
+            margin: 0 auto;
+            padding: 5px 0;
+        }
+
+        .admin-info .button {
+            width: 70%;
+            padding: 10px;
+            margin: unset;
+            margin: .5rem 15%;
+        }
+
+        .admin-details h3 {
+            font-size: 1.5rem;
+        } 
+
+        .admin-details h4 {
+            font-weight: var(--fw-semi-bold);
+        }
+
+        .admin-details h4 + h4, #other {
+            font-size: clamp(.875rem, 1.25vw, 1.125rem);
+        }
+
+        #other {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .table-container {
+            width: 50%;
+            margin: auto;
+        }
+
+        .table-container .admin-details {
+            width: 100%;
+            margin: 1rem auto;
+        }
+
+      .admin-info {
+          justify-content: center;
+      }
+
+      .admin-details table th {
+        font-size: clamp(.875rem, 1.25vw, 1rem);
+        padding: 15px;
+      }
+
+      .admin-details table td {
+        font-size: clamp(.875rem, 1.25vw, 1rem);
+        padding: 15px;
+        font-weight: var(--fw-semi-bold);
+      }
+
+      .admin-details table td button {
+        font-size: 1rem;
+        width: 100%;
+        padding: 10px;
+      }
+      
+    }
+ 
+
+
+/* Add New Programs */
 
 .form-wrapper {
     width: 100%;
