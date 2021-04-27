@@ -55,6 +55,7 @@ const LineChart = () => {
 
     const options = {
         maintainAspectRatio: false,
+        responsive: true,
         layout: {
             padding: window.innerWidth < 1120 ? 5 : 15,
         },

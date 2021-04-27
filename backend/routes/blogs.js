@@ -1,8 +1,12 @@
 const express = require('express');
 const Blogs = require('../models/blog.model');
-const adminChecker = require('../middleware/adminchecker');
 
 const router = express.Router();
+
+/*import middleware */
+const adminChecker = require('../middleware/adminchecker');
+const upload = require('../middleware/multer');
+
 
 /* Get all blogs posts */
 router.get('/', (req, res) => {
@@ -27,11 +31,19 @@ router.get('/:id', (req, res) => {
 })
 
 /* Add new blog post */
-router.post('/add', adminChecker, (req, res) => {
-    const newBlog = new Blogs(req.body)
+router.post('/add', adminChecker, upload.single('thumbnail'), (req, res) => {
+    const { title, summary, content } = req.body
+    const thumbnail = req.file.id
+
+    const newBlog = new Blogs({
+        title,
+        summary,
+        content,
+        thumbnail
+    })
 
     newBlog.save()
-    .then(() => { res.json('Program Successfully Added')})
+    .then(() => { res.json('Blog Successfully Added')})
     .catch((err) => { res.status(400).json(err)})
 })
 

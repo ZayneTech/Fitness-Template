@@ -1,28 +1,30 @@
 import React, {useState} from 'react';
 import { Plus } from '../svgs.js';
+import NewBlog from './add-new-blog.js';
 import NewProgram from './add-new-program';
 
 
 const AddPage = () => {
 
     const [programform, setProgramForm] = useState(false);
-    const [blogForm, setblogForm] = useState(false);
+    const [blogForm, setBlogForm] = useState(false);
     const [adminForm, setAdminForm] = useState(false);
 
-    const openModal = () => {
-        setProgramForm(prev => !prev)
+    const openModal = (form) => {
+        form(prev => !prev)
     }
 
     return(
         <section className="admin-page" >
             {programform ? <NewProgram setProgramForm={setProgramForm}/> : ''}
+            {blogForm ? <NewBlog setBlogForm={setBlogForm} /> : '' }
 
-            <div className="admin-add light" tabIndex="0" onClick={() => openModal()}>
+            <div className="admin-add light" tabIndex="0" onClick={() => openModal(setProgramForm)}>
                 <Plus />
                 <p>Add New Program</p>
             </div>
 
-            <div className="admin-add light" tabIndex="0">
+            <div className="admin-add light" tabIndex="0" onClick={() => openModal(setBlogForm)}>
                 <Plus />
                 <p>Add New Blog</p>
             </div>

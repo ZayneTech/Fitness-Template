@@ -39,7 +39,6 @@ connection.once('open', () => {
 const programsRoute = require('./routes/programs');
 const blogsRoute = require('./routes/blogs');
 const adminRoute = require('./routes/admin');
-const { getFips } = require('crypto');
 
 /* Use Routes */
 app.use('/programs', programsRoute);

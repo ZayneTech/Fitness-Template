@@ -1,9 +1,25 @@
 import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
-import AddPage from '../components/admin/admin-add-page';
+import AddPage from '../components/admin/admin-home-page';
 import AdminStatistics from '../components/admin/admin-statistics-page';
 
 const Admin = () => {
+
+
+const [currentPos, setCurrentPos] = useState(0);
+
+
+/*fix scroll position on screen resize */
+window.onresize = () => {
+    const adminContainer = document.querySelector('.admin-container');
+    let verticalScroll = adminContainer.clientHeight * currentPos;
+    let horizontalScroll = adminContainer.clientWidth * currentPos;
+    adminContainer.scroll({
+        left: horizontalScroll,
+        top: verticalScroll,
+        behavior: 'smooth'
+    ,})
+}
 
    const adminScroll = (int, link) => {
         const adminContainer = document.querySelector('.admin-container');
@@ -15,6 +31,7 @@ const Admin = () => {
         let verticalScroll = adminContainer.clientHeight * int;
         let horizontalScroll = adminContainer.clientWidth * int;
 
+
         adminContainer.scroll({
             top: verticalScroll,
             left: horizontalScroll,
@@ -24,6 +41,9 @@ const Admin = () => {
         /*set active link color */
         activeLink.classList.remove('active-link')
         newActiveLink.classList.add('active-link');
+
+        /*current position */
+        setCurrentPos(int);
    }
 
     return(

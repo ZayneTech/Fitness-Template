@@ -23,6 +23,7 @@ const DoughnutChart = () => {
 
       const options = {
         maintainAspectRatio: false,
+        responsive: true,
         layout: {
           padding: {
             right: window.innerWidth < 768 ? 30 : 20,

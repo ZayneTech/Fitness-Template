@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
 })
 
 /* Add new program */
-router.post('/add',adminchecker, upload.single('thumbnail'), (req, res) => {
+router.post('/add', adminchecker, upload.single('thumbnail'), (req, res) => {
 
     // const newProgram = new Programs(req.body);
     // const files = req.body.thumbnail;

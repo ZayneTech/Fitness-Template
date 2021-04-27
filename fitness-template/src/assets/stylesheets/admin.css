@@ -565,6 +565,7 @@
     left: 0;
     top: 45px;
     background: rgba(0, 0, 0, .75);
+    cursor: pointer;
     z-index: 9;
 }
 
@@ -581,13 +582,18 @@
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    cursor: initial;
 }
 
 .form-header {
     display: flex;
     justify-content: center;
     position: relative;
-    margin: 1.5rem;
+    margin: 1.5rem auto 0 auto;
+}
+
+.form-header h3 {
+    font-size: 1.5rem;
 }
 
 .input-field {
@@ -619,12 +625,12 @@
     font-weight: normal;
 }
 
-textarea#description {
+textarea#description, textarea#summary {
     height: 80px;
     resize: none;
 }
 
-textarea#about{
+textarea#about, textarea#content{
     min-height: 150px;
     max-height: 250px;
 }
@@ -703,6 +709,16 @@ input[type=range]::-webkit-slider-runnable-track {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  .close-modal-button {
+      width: 10%;
+      padding: 10px;
+      background: var(--clr-accent);
+      position:sticky;
+      top: 92.5%;
+      left: 2.5%;
+      margin-bottom: 20px;
   }
 
   @media only screen and (min-width: 500px) {

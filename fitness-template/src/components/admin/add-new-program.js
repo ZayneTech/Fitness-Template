@@ -76,10 +76,12 @@ const NewProgram = ({setProgramForm}) => {
     return(
         <div className="form-wrapper" onClick={(e) => closeModal(e)}>
             <form className="add-new-form" onSubmit={(e) => handleSubmit(e)} encType="multipart/form-data">
-
+                
                 <div className="form-header">
                     <h3>Add New Program</h3>
                 </div>
+
+                <button className="close-modal-button" onClick={() => setProgramForm(false)}> Close </button>
                 
                 <div className="input-field">
                     <label name="name">Program Name</label>
