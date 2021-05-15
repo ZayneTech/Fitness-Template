@@ -61,14 +61,17 @@ const NewBlog = ({setBlogForm}) => {
 
     return(
         <div className="form-wrapper" onClick={(e) => closeModal(e)}>
+
+                <button className="close-modal-button" onClick={() => setBlogForm(false)}> 
+                    Close 
+                </button>
+
             <form className="add-new-form" onSubmit={(e) => handleSubmit(e)}>
                 <div className="form-header">
                     <h3>Add New Blog</h3>
                 </div>
 
-                <button className="close-modal-button" onClick={() => setBlogForm(false)}> 
-                    Close 
-                </button>
+
 
                 <div className="input-field">
                     <label name="title">Blog Title</label>

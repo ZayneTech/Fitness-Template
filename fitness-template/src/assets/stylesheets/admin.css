@@ -11,7 +11,7 @@
 
 .login-form {
     width: auto;
-    height: 65vh;
+    height: 100vh; /*65vh */
     margin: 0 1.25rem;
     padding-top: 45px;
     display: flex;
@@ -173,8 +173,9 @@
 
 /* Admin Home Page */
 
+
 .admin-add {
-    width: 85%;
+    width: 85%; 
     max-width: 250px;
     display: flex;
     flex-direction: column;
@@ -186,6 +187,7 @@
     box-shadow: var(--bx-shadow);
     cursor: pointer;
 }
+
 
 .admin-add:active {
     box-shadow: unset;
@@ -236,7 +238,7 @@
     .admin-page {
         width: 100%;
         height: 100%;
-        flex-direction: row;
+         flex-direction: row; 
     }
 
     .admin-add {
@@ -569,15 +571,15 @@
     z-index: 9;
 }
 
-.form-wrapper form {
+.form-wrapper form, .programs-container {
     width: 100%;
-    height: auto;
-    max-height: 650px;
+    height: 85vh; /*auto */
+    max-height: 85vh;
     background: white;
     position: fixed;
-    top: 50%;
+    top: 45;
     left: 0%;
-    transform: translateY(-50%);
+    /* transform: translateY(-50%);  */
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -712,14 +714,15 @@ input[type=range]::-webkit-slider-runnable-track {
   }
 
   .close-modal-button {
-      width: 10%;
-      padding: 10px;
-      background: var(--clr-accent);
-      position:sticky;
-      top: 92.5%;
-      left: 2.5%;
-      margin-bottom: 20px;
-  }
+    width: 33%;
+    padding: 10px;
+    background: var(--clr-accent);
+    position:absolute;
+    bottom: 0;
+    left: 33%;
+    right:33%;
+    margin-bottom: 20px;
+}
 
   @media only screen and (min-width: 500px) {
       .input-field {
@@ -735,7 +738,7 @@ input[type=range]::-webkit-slider-runnable-track {
           top: 70px;
           width: 82.5%;
       }
-       .form-wrapper form {
+       .form-wrapper form, .programs-container {
             width: 80%;
             max-width: unset;
             position: absolute;
@@ -754,4 +757,189 @@ input[type=range]::-webkit-slider-runnable-track {
           top: -70px;
           max-height: 1235px;
       }
+  }
+
+
+  /* Edit Programs */
+
+  .programList {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    overflow: auto;
+  }
+
+  .programList h1 {
+      width: 100%;
+      margin: 1rem;
+  }
+
+
+  /* block */
+  .programCard {
+      width: 90vw; /*90% */
+      border-radius: 5px;
+      box-shadow: var(--bx-shadow);
+      margin: 1rem auto;
+  }
+    /*modifiers */
+
+  .programCard--light{
+    background: white;
+}
+
+.programCard--dark {
+    background: #2a2a2a;
+    color: white;
+    padding: 1rem;
+}
+
+.programCard--v2 {
+    position: relative;
+    overflow: hidden;
+}
+/* Block Elements */
+
+ .programCard__loader {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     height: 100%;
+ }
+
+ .programCard__loader svg {
+    animation: loader 2s linear infinite;
+ }
+
+  .programCard__overlay {
+    display: none;
+  }
+
+  .programCard--v2 .programCard__overlay {
+      display: unset;
+  }
+
+  .programCard__img {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      width: 100%;
+  }
+
+  .programCard--dark .programCard__img {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+  }
+
+  .programCard__header {
+      width: auto;
+      flex-direction: column;
+      justify-content: space-between; 
+      align-items: center;
+      flex-wrap: wrap;
+  }
+
+  .programCard--v2 .programCard__header{
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      color: white;
+  }
+
+.programCard__header, 
+.programCard__content {
+      margin: 1rem .5rem;
+}
+
+.programCard__name {
+    width: 80%;
+    text-align: center;
+    font-size: 1.25rem;
+    position: relative;
+}
+
+.programCard--v2 .programCard__name {
+    font-size: 1.5rem;
+}
+
+ .programCard--v2 .programCard__name::before {
+    content: '';
+    width: 90%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: 5%;
+    bottom: -.5rem;
+} 
+
+  .programCard__created {
+      font-size: .875rem;
+      font-weight: normal;
+  }
+
+  .programCard__created span {
+      font-weight: var(--fw-semi-bold);
+  }
+
+  .programCard--v2 .programCard__created {
+      font-size: 1rem;
+  }
+
+  .programCard__button {
+      margin: .5rem 10%;
+      width: 80%;
+      font-weight: var(--fw-bold);
+  }
+
+  .programCard--dark .programCard__button {
+      background:white;
+      color: black;
+  }
+
+  @keyframes loader {
+      0% { transform: rotate(0deg) }
+
+      25% { transform: rotate(90deg) }
+
+      50% { transform: rotate(180deg) }
+
+      75% { transform: rotate(270deg) }
+
+      100% { transform: rotate(360deg) }
+  }
+
+  @media only screen and (min-width: 768px) {
+    
+    .programWrapper {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .programList h1 {
+        font-size: 2.5rem;
+    }
+
+    .programCard {
+        width: 42.5%;
+        min-width: 22rem;
+    }
+
+    .programCard__loader {
+        width: 100%;
+        height: 250px;
+    }
+
+    .programCard__header {
+        margin: 1rem auto .5rem auto;
+    }
+
+
   }

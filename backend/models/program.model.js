@@ -7,7 +7,7 @@ const programSchema = new Schema({
     description: {type: String, required: true},
     about: {type: String, required: true},
     difficulty: {type: String, required: true},
-    thumbnail: {type: Object, required: true}
+    thumbnail: {type: Schema.Types.ObjectId, required: true, ref: 'uploads.files'}
 }, {timestamps: true})
 
 const Program = mongoose.model('Program', programSchema);

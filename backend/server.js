@@ -27,12 +27,46 @@ mongoose.connect(uri, {
 
 const connection = mongoose.connection;
 
-let gfs;
+let gfs, gridFSBucket;
 
 connection.once('open', () => {
-    gfs = Grid(connection.db, mongoose.mongo)
+     gridFSBucket = new mongoose.mongo.GridFSBucket(connection.db, {
+         bucketName: 'uploads'
+    })
+    // init stream 
+    gfs = Grid(connection.db, mongoose.mongo);
     gfs.collection('uploads');
+
     console.log('Connected to MongoDB')
+})
+
+// get files with gridfs
+const getGridFSFiles = id => {
+    return new Promise((resolve, reject) => {
+      gfs.files.findOne({ _id: mongoose.Types.ObjectId(id) }, (err, files) => {
+        if (err) reject(err);
+        // Check if files
+        if (!files || files.length === 0) {
+          resolve(null);
+        } else {
+          resolve(files);
+        }
+      });
+    });
+  };
+  
+  const createGridFSReadStream = id => {
+    return gridFSBucket.openDownloadStream(mongoose.Types.ObjectId(id));
+  };
+
+app.get('/uploads/:id', async (req, res) => {
+   const image = await getGridFSFiles(req.params.id)
+   if (!image) {
+       res.status(404).send({message: 'Image Not Found'})
+   }
+   res.setHeader('Content-type', image.contentType);
+   const readStream = createGridFSReadStream(req.params.id);
+   readStream.pipe(res);
 })
 
 /* Define Routes*/
@@ -49,7 +83,6 @@ app.get('/', (req, res) => {
     console.log('home request recieved');
     res.status(200).sendFile(path.join(__dirname, '../fitness-template/src/index.js'))
 })
-
 
 app.listen(PORT, () => {
     console.log(`Listening on PORT: ${PORT}`);

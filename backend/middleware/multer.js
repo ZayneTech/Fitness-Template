@@ -6,9 +6,9 @@ const uri = process.env.ATLAS_URI;
 
 const storage = new GridFsStorage({
     url: uri,
+    options: {useUnifiedTopology: true},
     file: (req, file) => {
         return new Promise((resolve, reject) => {
-            
             const filename = file.originalname;
             const fileInfo = {
                 filename: filename,

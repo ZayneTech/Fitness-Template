@@ -1,6 +1,5 @@
 import { useContext, useEffect } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import axios from 'axios';
 import Navbar from './components/navigation/navbar';
 import Homepage from './routes/homepage';
 import About from './routes/about';
@@ -16,6 +15,7 @@ import GUI from './components/customize-gui';
 import Admin from './routes/admin';
 import AdminLogin from './routes/admin-login';
 import './App.css';
+import AdminProgramsList from './components/admin/programs-list';
 
 function App() {
 
@@ -31,26 +31,33 @@ function App() {
     <div className="App">
       <Router>
             <Navbar />
+                {/* Shopping Cart */}
 
               { cartIsOpen ? <ShoppingCart /> : "" }
 
+                {/* Homepage */}
                 <Route exact path="/">
                     <GUI />
                     <Homepage />
                 </Route>
 
+
+                {/* About */}
                 <Route path="/about">
                     <About />
                 </Route>
 
+                  {/* Programs */}
                 <Route exact path="/programs">
                     <AllPrograms />
                 </Route>
 
-                <Route path="/programs/program">
+                <Route path="/programs/:id">
                     <Program />
                 </Route>
 
+
+                {/* Blogs */}
                 <Route exact path="/blogs">
                     <BlogArchive />
                 </Route>
@@ -59,16 +66,23 @@ function App() {
                     <Blog />
                 </Route>
 
+                  {/* Contact */}
                 <Route path="/contact">
                 
                 </Route>
 
+
+                {/* Admin */}
                 <Route exact path="/admin">
                   <Admin />
                 </Route>
 
                 <Route  path="/admin/login">
                   <AdminLogin />
+                </Route>
+
+                <Route path="/admin/programs">
+                      <AdminProgramsList />
                 </Route>
 
             <Footer />

@@ -11,8 +11,9 @@ const upload = require('../middleware/multer');
 router.get('/', (req, res) => {
     Programs.find({}, (err, program) => { 
         if (err) return err
-    })
-    .then(programs => { res.json(programs) })
+    }).sort({createdAt: -1})
+    .then(programs => { 
+        res.json(programs) })
     .catch(err => { res.status(400).json(`There was an Error: ${err}`) });
 })
 

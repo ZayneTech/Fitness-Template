@@ -7,9 +7,10 @@ import '../../assets/stylesheets/footer.css';
 const Footer = () => {
     const footer = useRef();
     const url = useLocation();
+    const splitUrl = url.pathname.split('/');
     
     useEffect(()=> {
-        url.pathname === '/admin' ?
+        splitUrl[1] === 'admin' ?
         footer.current.style.display = 'none' :
         footer.current.style.display = 'flex'
     }, [])
