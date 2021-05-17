@@ -99,6 +99,10 @@
 }
 
 
+
+
+
+
 /*Admin Classes */
 
 .admin-main {
@@ -110,12 +114,12 @@
     width: 100%;
     height: calc(100vh - 45px);
     max-height: 1200px;
+    top: 22.5px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     position: relative;
     margin: auto;
-    top: 22.5px;
     overflow-y: hidden;
     overflow-x: hidden;
 }
@@ -123,10 +127,11 @@
 .admin-page {
     width: 100%;
     height: 100%;
-    overflow-x: auto;
+    /* overflow-x: auto; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    overflow-y: auto;
 }
 
 .active-link {
@@ -146,7 +151,7 @@
 
 /*Admin SIde Nav */
 .admin-sidenav {
-    width: 35%;
+    width: 25%;
     height: 100vh;
     max-height: 1200px;
     background: #1a1a1a;
@@ -156,8 +161,9 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    left: 0;
+    left: 0%;
     transition: left 1s;
+    z-index: 9;
 }
 
 .admin-sidenav li{
@@ -173,7 +179,6 @@
 
 /* Admin Home Page */
 
-
 .admin-add {
     width: 85%; 
     max-width: 250px;
@@ -188,6 +193,84 @@
     cursor: pointer;
 }
 
+.adminHome {
+    width: 95%;
+    max-width: 500px;
+    height: auto;
+    box-shadow: var(--bx-shadow);
+    margin: 1.25rem auto;
+    color: #444;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.adminHome__h2 {
+    width: auto;
+    margin: 1rem;
+}
+
+.adminHome__contentContainer {
+    height: 90%;
+}
+
+.adminHome__content {
+    width: auto;
+    margin: 1rem;
+    border: 2px solid #E8EBEE;
+    padding: .25rem 0;
+}
+
+.adminHome__content--padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.adminHome__content p {
+    margin: 1rem 0;
+}
+.adminHome__content .adminHome__contentSpan{
+    font-weight: var(--fw-bold);
+}
+
+.indent {
+    padding-left: 1.25rem;
+    margin-top: .25rem;
+}
+.indent li {
+    padding: .25rem;
+}
+
+.adminHome__container{
+    width: 100%;
+    height: 125px;
+    margin: 0;
+    background: white;
+    border: none;
+    border-top: 4px solid #E8EBEE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+}
+
+.adminHome__actions {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.adminHome__actions p {
+    margin: .5rem 0 0 0;
+}
+
+.adminHome__actions svg {
+    width: 30%;
+    min-width: 45px;
+    min-height: 45px;
+}
 
 .admin-add:active {
     box-shadow: unset;
@@ -238,7 +321,29 @@
     .admin-page {
         width: 100%;
         height: 100%;
-         flex-direction: row; 
+        flex-direction: row; 
+        align-items: center;
+        position: relative;
+    }
+
+    .adminHome {
+        width: 30%;
+        height: 500px;
+        overflow: hidden;
+    }
+
+    .adminHome__contentContainer {
+        overflow: auto;
+    }
+
+    .adminHome__h2 {
+        font-size: clamp(1.25rem, 2vw, 1.5rem);
+    }
+
+    .adminHome__actions svg {
+        width: 30%;
+        min-width: 50px;
+        min-height: 50px;
     }
 
     .admin-add {
@@ -916,7 +1021,7 @@ input[type=range]::-webkit-slider-runnable-track {
   }
 
   @media only screen and (min-width: 768px) {
-    
+
     .programWrapper {
         display: flex;
         justify-content: flex-start;
